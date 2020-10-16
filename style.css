@@ -1,0 +1,133 @@
+body{
+    background-color: black;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.fotka{
+    height: 35vw;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+.napis{
+    position: relative;
+    color: white;
+    top: 15vw;
+    width: 100%;
+    font-size: 5vw;
+    height: 15vw;
+    text-align: center;
+}
+.fotka1 {
+    position: relative;
+    top: 7vw;
+    height: 20vw;
+    width: 25vw;
+    margin-left: 30vw;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.fotka5{
+    height: 10%;
+    width: 25%;
+    position: relative;
+    margin-left: 35vw;
+    top: 8vw;
+}
+.bioo{
+    font-size: 2vh;
+    position: relative;
+    margin-left:2vw;
+    color: white;
+    width: 90%;
+    top:15vw;
+}
+.bioo h1{
+
+    font-size: 4vh;
+}
+.bioo h2{
+
+    font-size: 3vh;
+}
+.album1{
+    height: 35vw;
+    width: 35vw ;
+    position: absolute;
+    right:0;
+}
+.songy{
+    font-size: 2vh;
+    position: relative;
+    top:5vw;
+    height: 100vw;
+    margin-left: 1vw;
+    color: white;
+    width: 60vw;
+}
+.songy ul li{
+    margin: 1vw;
+}
+.songy ul a {
+    text-decoration: none;
+    color: white;
+}.songy ul li:hover a{
+     background-color: lightslategray;
+ }
+ .songy h2{
+     font-size: 3vh;
+     margin-left: 1vh;
+     margin-bottom: 3vh;
+ }
+@media only screen and (min-width: 768px) {
+    .fotka1 {
+        top: -25vw;
+        margin-left: 7vw;
+        width: 35vw;
+        height: 15vw;
+    }
+
+    .napis {
+        font-size: 3vw;
+        width: 40vw;
+        top: -15vw;
+        margin-left: 5vw;
+    }
+
+    .fotka {
+        height: 20vw;
+        margin-left: 50vw;
+        width: 50vw;
+        top: 5vw;
+    }
+
+    .fotka5 {
+        height: 10vw;
+        width: 25vw;
+        position: relative;
+        margin-left: 5vw;
+        top: 5vw;
+    }
+
+    .bioo {
+        font-size: 2vh;
+        position: relative;
+        color: white;
+        top: -5vw;
+        width: 60vw;
+        margin-left: 35vw;
+
+    }
+    .songy{
+
+        margin-left: 5vw;
+    }
+}
+
