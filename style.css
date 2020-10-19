@@ -43,9 +43,9 @@ body{
 }
 .bioo{
     font-size: 2vh;
-    position: relative;
-    margin-left:2vw;
     color: white;
+    position: relative;
+    margin-left:5vw;
     width: 90%;
     top:15vw;
 }
