@@ -113,6 +113,12 @@ p{ white-space: pre-line;}
     color: white;
     text-align: center;
 }
+svg{
+    overflow: hidden;
+    vertical-align: middle;
+    left: 42.5%;
+    position: absolute;
+}
 @media only screen and (min-width: 768px) {
     .fotka1 {
         top: -25vw;
@@ -152,7 +158,7 @@ p{ white-space: pre-line;}
         margin-left: 35vw;
 
     }
-    .songy{
+    .songy {
 
         margin-left: 5vw;
     }
