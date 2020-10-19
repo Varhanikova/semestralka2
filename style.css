@@ -67,7 +67,7 @@ body{
     font-size: 2vh;
     position: relative;
     top:5vw;
-    height: 100vw;
+    height: 100vh;
     margin-left: 1vw;
     color: white;
     width: 60vw;
@@ -159,7 +159,6 @@ svg{
 
     }
     .songy {
-
         margin-left: 5vw;
     }
 }
