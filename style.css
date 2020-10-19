@@ -86,6 +86,27 @@ body{
      margin-left: 1vh;
      margin-bottom: 3vh;
  }
+.toop {
+    color: bisque;
+
+}
+.bla{
+    font-size: 2vh;
+    color: white;
+    text-align: center;
+    width: 100vw;
+}
+.bla h1{
+    font-size: 4vh;
+    text-align: center;
+
+}
+.bla h2{
+    font-size: 3vh;
+    text-align: center;
+}
+
+p{ white-space: pre-line;}
 @media only screen and (min-width: 768px) {
     .fotka1 {
         top: -25vw;
