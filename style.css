@@ -7,15 +7,21 @@ body{
     width: 50px;
 }
 .fotka{
-    height: 35vw;
-    width: 100%;
-    position: relative;
-    top: 0;
+    width: 45vw;
+    margin-left:2vw;
+}
+.fotka2{
+    width: 45vw;
+    margin-left: 48vw;
+
+}.fotka3{
+     width: 45vw;
+     margin-left:2vw;
 }
 .napis{
     position: relative;
     color: white;
-    top: 15vw;
+    top: 2vh;
     width: 100%;
     font-size: 5vw;
     height: 15vw;
@@ -23,7 +29,7 @@ body{
 }
 .fotka1 {
     position: relative;
-    top: 7vw;
+    top: 0;
     height: 20vw;
     width: 25vw;
     margin-left: 30vw;
@@ -121,26 +127,37 @@ svg{
 }
 @media only screen and (min-width: 768px) {
     .fotka1 {
-        top: -25vw;
-        margin-left: 7vw;
-        width: 35vw;
+        top: 0;
+        margin-left: 10vw;
+        width: 25vw;
         height: 15vw;
     }
 
     .napis {
         font-size: 3vw;
         width: 40vw;
-        top: -15vw;
+        top: 10vh;
         margin-left: 5vw;
     }
 
     .fotka {
-        height: 20vw;
-        margin-left: 50vw;
-        width: 50vw;
-        top: 5vw;
+        margin-left: 58vw;
+        width: 20vw;
+        top: -29vw;
     }
+.fotka2{
+    top: -26vw;
+    width: 20vw;
+    /* height: 20vw; */
+    margin-left: 74vw;
+}
+.fotka3{
+    width: 20vw;
+    /* height: 20vw; */
+    top: -44vw;
+    margin-left: 44vw;
 
+}
     .fotka5 {
         height: 10vw;
         width: 25vw;

@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Concerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Concerts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoneInYourWake.html" beforeDir="false" afterPath="$PROJECT_DIR$/GoneInYourWake.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LetGoOfYourLove.html" beforeDir="false" afterPath="$PROJECT_DIR$/LetGoOfYourLove.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoveYouLetTooClose.html" beforeDir="false" afterPath="$PROJECT_DIR$/LoveYouLetTooClose.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -69,7 +68,9 @@
       <updated>1602853140522</updated>
       <workItem from="1602853141725" duration="4779000" />
       <workItem from="1603116758612" duration="5672000" />
-      <workItem from="1603122868128" duration="11083000" />
+      <workItem from="1603122868128" duration="11470000" />
+      <workItem from="1603201382581" duration="6373000" />
+      <workItem from="1603219466090" duration="1265000" />
     </task>
     <servers />
   </component>
@@ -86,6 +87,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603116864662">
