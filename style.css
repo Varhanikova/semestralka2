@@ -178,4 +178,7 @@ svg{
         margin-left: 5vw;
     }
 }
+.bg-dark {
+    background-color: black!important;
+}
 
