@@ -8,15 +8,15 @@ body{
 }
 .fotka{
     width: 45vw;
-    margin-left:2vw;
+    margin-left:8vw;
 }
 .fotka2{
     width: 45vw;
-    margin-left: 48vw;
+    margin-left: 50vw;
 
 }.fotka3{
      width: 45vw;
-     margin-left:2vw;
+     margin-left:8vw;
 }
 .napis{
     position: relative;
@@ -129,7 +129,7 @@ svg{
     .fotka1 {
         top: 0;
         margin-left: 10vw;
-        width: 25vw;
+        width: 30vw;
         height: 15vw;
     }
 
@@ -141,7 +141,7 @@ svg{
     }
 
     .fotka {
-        margin-left: 58vw;
+        margin-left: 62vw;
         width: 20vw;
         top: -29vw;
     }
@@ -149,13 +149,13 @@ svg{
     top: -26vw;
     width: 20vw;
     /* height: 20vw; */
-    margin-left: 74vw;
+    margin-left: 77vw;
 }
 .fotka3{
     width: 20vw;
     /* height: 20vw; */
     top: -44vw;
-    margin-left: 44vw;
+    margin-left: 48vw;
 
 }
     .fotka5 {
