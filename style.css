@@ -18,6 +18,13 @@ body{
      width: 45vw;
      margin-left:8vw;
 }
+ .fotka:hover {
+     opacity: 0.7;
+ }.fotka2:hover {
+     opacity: 0.7;
+ }.fotka3:hover {
+     opacity: 0.7;
+ }
 .napis{
     position: relative;
     color: white;
@@ -221,7 +228,7 @@ p{ white-space: pre-line;}
     }
 
     .fotka {
-        margin-left: 62vw;
+        margin-left: 63vw;
         width: 20vw;
         top: -29vw;
     }
