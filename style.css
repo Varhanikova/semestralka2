@@ -9,6 +9,7 @@ body{
 .fotka{
     width: 45vw;
     margin-left:8vw;
+
 }
 .fotka2{
     width: 45vw;
@@ -150,7 +151,6 @@ p{ white-space: pre-line;}
     width: 70vw;
     margin-top: -1vw;
 }
-
 .napisok{
     color: white;
     font-size: 3vw;
@@ -167,7 +167,6 @@ p{ white-space: pre-line;}
     font-size: 3.5vw;
 }
 @media screen and (min-width: 479px) {
-
     .kalendare p{
         margin-left: 13.7vh;
         color: black;
@@ -199,9 +198,9 @@ p{ white-space: pre-line;}
     .napisok{
         color: white;
         font-size: 2.2vh;
-        top: 5vw;
+        top: 5vh;
         width: 95vw;
-        margin-left: 2vw;
+        margin-left: 5vh;
     }
     .napisok h1{
 
@@ -263,8 +262,10 @@ p{ white-space: pre-line;}
     .songy {
         margin-left: 5vw;
     }
-
-    .kalendare p{
+.napisok{
+    margin-left: 10vh;
+}
+  /*  .kalendare p{
         margin-left: 13.7vh;
         color: black;
         width: 7vh;
@@ -306,7 +307,7 @@ p{ white-space: pre-line;}
              font-size: 3vh;
              margin-top: -3vh;
              margin-bottom: 9vh;
-     }
+     }*/
 }
 .bg-dark {
     background-color: black!important;
