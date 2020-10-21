@@ -126,7 +126,7 @@ p{ white-space: pre-line;}
     margin-top: -6.5vw;
 }
 .kalendare svg{
-    width:10vw;
+   width:10vw;
     height:10vw;
     margin-left: 7vw;
     margin-top:5vw;
@@ -159,6 +159,52 @@ p{ white-space: pre-line;}
      margin-top: -7vw;
     font-size: 3.5vw;
 }
+@media screen and (min-width: 479px) {
+
+    .kalendare p{
+        margin-left: 13.7vh;
+        color: black;
+        width: 7vh;
+        font-size: 2vh;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: -6.5vh;
+    }
+    .kalendare svg{
+        width:10vh;
+        height:10vh;
+        margin-top: 4vh;
+        margin-left: 12vh;
+    }
+    .kalendare h1{
+        margin-left: 28vh;
+        width: 70vh;
+        font-size: 2.5vh;
+        margin-top: -10vh;
+    }
+    .kalendare h2{
+        font-size: 2.2vh;
+        margin-left: 28vh;
+        width: 70vh;
+        margin-top: -0.2vh;
+    }
+
+    .napisok{
+        color: white;
+        font-size: 2.2vh;
+        top: 5vw;
+        width: 95vw;
+        margin-left: 2vw;
+    }
+    .napisok h1{
+
+        font-size: 3.5vh;
+    }.napisok h2{
+         font-size: 3vh;
+         margin-top: -3vh;
+         margin-bottom: 9vh;
+     }
+}
 @media only screen and (min-width: 768px) {
     .fotka1 {
         top: 0;
@@ -182,12 +228,10 @@ p{ white-space: pre-line;}
 .fotka2{
     top: -26vw;
     width: 20vw;
-    /* height: 20vw; */
     margin-left: 77vw;
 }
 .fotka3{
     width: 20vw;
-    /* height: 20vw; */
     top: -44vw;
     margin-left: 48vw;
 
@@ -213,49 +257,48 @@ p{ white-space: pre-line;}
         margin-left: 5vw;
     }
 
-    .kalendare{    color: white;}
     .kalendare p{
-        margin-left: 7.7vw;
+        margin-left: 13.7vh;
         color: black;
-        width: 4vw;
-        font-size: 0.9vw;
+        width: 7vh;
+        font-size: 2vh;
         font-weight: bolder;
         text-align: center;
-        margin-top: -3.3vw;
+        margin-top: -6.5vh;
     }
     .kalendare svg{
-        width:5vw;
-        height:5vw;
-        margin-top: 4vw;
-        margin-left: 7vw;
+        width:10vh;
+        height:10vh;
+        margin-top: 4vh;
+        margin-left: 12vh;
     }
     .kalendare h1{
-        margin-left: 14vw;
-        width: 70vw;
-        font-size: 1.5vw;
-        margin-top: -4.5vw;
+        margin-left: 28vh;
+        width: 70vh;
+        font-size: 2.5vh;
+        margin-top: -10vh;
     }
     .kalendare h2{
-        font-size: 1.1vw;
-        margin-left: 14vw;
-        width: 70vw;
-        margin-top: -0.5vw;
+        font-size: 2.2vh;
+        margin-left: 28vh;
+        width: 70vh;
+        margin-top: -0.2vh;
     }
 
     .napisok{
         color: white;
-        font-size: 1.3vw;
+        font-size: 2.2vh;
         top: 5vw;
         width: 95vw;
         margin-left: 2vw;
     }
     .napisok h1{
 
-        font-size: 2vw;
+        font-size: 3.5vh;
     }.napisok h2{
-             font-size: 1.7vw;
-             margin-top: -1vw;
-             margin-bottom: 5vw;
+             font-size: 3vh;
+             margin-top: -3vh;
+             margin-bottom: 9vh;
      }
 }
 .bg-dark {
