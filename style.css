@@ -1,4 +1,5 @@
-body{
+
+body {
     background-color: black;
 }
 
@@ -167,6 +168,15 @@ p{ white-space: pre-line;}
      margin-top: -7vw;
     font-size: 3.5vw;
 }
+.btn-outline-success {
+    color: black;
+    border-color: black;
+    background-color: white;
+}
+.btn-outline-success:hover{
+    border-color: black;
+    background-color: grey;
+}
 @media screen and (min-width: 479px) {
     .kalendare p{
         margin-left: 13.7vh;
@@ -266,6 +276,7 @@ p{ white-space: pre-line;}
 .napisok{
     margin-left: 10vh;
 }
+
   /*  .kalendare p{
         margin-left: 13.7vh;
         color: black;
