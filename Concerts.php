@@ -28,7 +28,7 @@ $concerts  = $storage->getAll();
         <div class="collapse navbar-collapse" id="navbarsExample06">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.php">Home </a>
+                    <a class="nav-link" href="index.html">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Bio.html">Bio</a>
