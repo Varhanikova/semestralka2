@@ -1,9 +1,17 @@
+<?php
+require "DB_storage.php";
+$storage = new DB_storage();
+if(isset($_POST['date'])) {
+    $storage->createPost($_POST['date'], $_POST['city'],$_POST['club']);
+}
+$concerts  = $storage->getAll();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Thousand Below</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -25,10 +33,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="Bio.html">Bio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Concerts.php">Concerts</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Concerts.php">Concerts<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Albums</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown06">
                         <a class="dropdown-item" href="LoveYouLetTooClose.html">The Love You Let Too Close</a>
@@ -45,57 +53,38 @@
         </div>
     </nav>
 </div>
-<img class="album1" src="letGoOfYourLove.jpg" alt="album">
 
-<div class="songy ">
-    <h2>Songs:</h2>
-    <ul>
-        <li><a href="#LetGoOfYourLove">1. Let Go Of Your Love</a></li>
-        <li><a href="GoneInYourWake.html#Chemical" >2. chemical</a></li>
-        <li><a href="GoneInYourWake.html#alone">3. alone (out of my head)</a></li>
-        <li><a href="GoneInYourWake.html#171xo">4. 171 xo</a></li>
-        <li><a href="GoneInYourWake.html#LostBetween">5. lost between</a></li>
-       </ul>
-</div>
-
-<div id="LetGoOfYourLove" class="bla">
-    <h1>Let Go Of Your Love</h1>
-    <h2>Lyrics:</h2>
-    <p> Make me feel what you feel
-        Could you teach me to hate you for real?
-        I've been left alone, never known the bond that we share
-        With anyone else can you say that you cared?
-        Now I'm tossed aside, locked inside the prison you built
-        Finding out you're going out to love someone else
-
-        When I broke myself for you
-        Broke myself for you
-        And now I've gotta let go
-        And now I've gotta let go of your love
-        And now I've gotta let go
-        And now I've gotta let go of your love
-
-        And now I've gotta let go
-        And now I've gotta let go of your love
-
-        Do you think of me on any occasion?
-        You used to be my savior, my haven
-        My memories are plagued with you everywhere
-        Christmas and summertime birthdays, and all of those
-        Restaurants and funny things you'd say
-        And now you don't even care that I fell apart
-
-        And broke myself for you
-        Broke myself for you
-        And now I've gotta let go
-        And now I've gotta let go of your love
-        And now I've gotta let go
-        And now I've gotta let go of your love
-
-        And now I've gotta let go
-        And now I've gotta let go of your love</p>
-    <a href="#top" class="toop"> Back to top<br></a>
+<div class="napisok col-sm-11">
+    <h1>Thousand Below tour dates 2021</h1>
+    <br>
+    <p>Thousand Below is currently touring across 9 countries and has 20 upcoming concerts.
+        Their next tour date is at Amsterdam Bar & Hall in St. Paul, after that they'll be at Stengade in Copenhagen.
+        See all your opportunities to see them live below!</p>
     <br><br>
+
+    <div class="addConcert">
+        <form method="post">
+        <label> Date: </label>
+        <input type="text" name="date">
+        <label> City, Country: </label>
+        <input type="text" name="city">
+        <label>Club: </label>
+        <input type="text" name="club">
+        <input type="submit" value="Odoslat">
+        </form>
+    </div>
+    <h2>Upcoming concerts:</h2>
 </div>
+<?php  foreach($concerts as $conc) {   ?>
+    <div class="kalendare">
+        <svg  viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+        <p><?=$conc->getDate()?></p>
+        <h1><?=$conc->getCity()?></h1>
+        <h2><?=$conc->getClub() ?></h2>
+</div>
+<?php } ?>
+
 </body>
 </html>

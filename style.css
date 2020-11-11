@@ -1,6 +1,13 @@
-
+/*if(isset($_POST['date'])) {
+    $storage->createPost($_POST['date'], $_POST['city'],$_POST['club']);
+}*/
 body {
     background-color: black;
+}
+.addConcert{
+    color: white;
+    margin-left: 5vw;
+
 }
 
 .logo{
@@ -121,7 +128,10 @@ body {
 }
 
 p{ white-space: pre-line;}
+.kalendarikk {
+color: white;
 
+}
 .kalendare{    color: white;}
 .kalendare p{
     color: black;
@@ -165,7 +175,7 @@ p{ white-space: pre-line;}
     font-size: 4vw;
 }.napisok h2{
      margin-bottom: 8vw;
-     margin-top: -7vw;
+     margin-top: 3vw;
     font-size: 3.5vw;
 }
 .btn-outline-success {
@@ -218,7 +228,7 @@ p{ white-space: pre-line;}
         font-size: 3.5vh;
     }.napisok h2{
          font-size: 3vh;
-         margin-top: -3vh;
+         margin-top: 5vh;
          margin-bottom: 9vh;
      }
 }
