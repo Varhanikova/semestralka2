@@ -1,13 +1,15 @@
-/*if(isset($_POST['date'])) {
-    $storage->createPost($_POST['date'], $_POST['city'],$_POST['club']);
-}*/
+
 body {
     background-color: black;
 }
-.addConcert{
+.addConcert {
     color: white;
-    margin-left: 5vw;
-
+}
+.editConcert {
+    margin-top: 5vw;
+}
+.deleteConcert{
+    margin-top: 5vw;
 }
 
 .logo{

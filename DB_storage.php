@@ -26,8 +26,6 @@ public function getAll() : array {
     }
     return $concerts;
     }
-
-
     public function createPost(string $date, string $city,string $club) : void
     {
         $concert = new Concert($date,$city,$club);
@@ -36,7 +34,15 @@ public function getAll() : array {
 public function saveConcert(Concert $concert): void {
     $stmt = $this->pdo->prepare("INSERT INTO concerts(datum,city,club) VALUES(?,?,?)");
     $stmt->execute([$concert->getDate(), $concert->getCity(), $concert->getClub()]);
+}
+public function editConcert( string $zaznam,string $newDate,string $newCity, string $newClub) : void {
 
+        $stmt = $this->pdo->prepare("UPDATE concerts SET datum=?, city=?, club=? WHERE datum='$zaznam'");
+        $stmt->execute([$newDate, $newCity,$newClub]);
+}
+public function deleteConcert(string $which) {
+    $stmt = $this->pdo->prepare("DELETE FROM concerts WHERE datum='$which'");
+    $stmt->execute();
 
 }
 }

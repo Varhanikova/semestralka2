@@ -1,8 +1,14 @@
 <?php
 require "DB_storage.php";
 $storage = new DB_storage();
-if(isset($_POST['date'])) {
+if(isset($_POST['Send1'])) {
     $storage->createPost($_POST['date'], $_POST['city'],$_POST['club']);
+}
+if(isset($_POST['Send2']))  {
+    $storage->editConcert($_POST['date'], $_POST['newDate'], $_POST['newCity'],$_POST['newClub']);
+}
+if(isset($_POST['Send3']))  {
+   $storage->deleteConcert($_POST['date']);
 }
 $concerts  = $storage->getAll();
 
@@ -63,6 +69,7 @@ $concerts  = $storage->getAll();
     <br><br>
 
     <div class="addConcert">
+        <label>Add new concert: </label>
         <form method="post">
         <label> Date: </label>
         <input type="text" name="date">
@@ -70,9 +77,35 @@ $concerts  = $storage->getAll();
         <input type="text" name="city">
         <label>Club: </label>
         <input type="text" name="club">
-        <input type="submit" value="Odoslat">
+        <input type="submit" name="Send1" value="Send">
+
         </form>
     </div>
+
+    <div class="editConcert">
+        <label> Update concert: </label>
+        <form method="post">
+            <label> Which data you want to update? (Write date):  </label>
+            <input type="text" name="date"><br>
+            <label> Updated Date:    </label>
+            <input type="text" name="newDate"><br>
+            <label> Updated City:    </label>
+            <input type="text" name="newCity"><br>
+            <label> Updated Club:   </label>
+            <input type="text" name="newClub"> <br>
+            <input type="submit" name="Send2" value="Send">
+        </form>
+    </div>
+
+    <div class="deleteConcert">
+        <label> Delete concert: </label>
+        <form method="post">
+            <label> Which data you want to delete? (Write date):  </label>
+            <input type="text" name="date"><br>
+            <input type="submit" name="Send3" value="Send">
+        </form>
+    </div>
+
     <h2>Upcoming concerts:</h2>
 </div>
 <?php  foreach($concerts as $conc) {   ?>
