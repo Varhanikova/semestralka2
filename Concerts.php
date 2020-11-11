@@ -68,43 +68,6 @@ $concerts  = $storage->getAll();
         See all your opportunities to see them live below!</p>
     <br><br>
 
-    <div class="addConcert">
-        <label>Add new concert: </label>
-        <form method="post">
-        <label> Date: </label>
-        <input type="text" name="date">
-        <label> City, Country: </label>
-        <input type="text" name="city">
-        <label>Club: </label>
-        <input type="text" name="club">
-        <input type="submit" name="Send1" value="Send">
-
-        </form>
-    </div>
-
-    <div class="editConcert">
-        <label> Update concert: </label>
-        <form method="post">
-            <label> Which data you want to update? (Write date):  </label>
-            <input type="text" name="date"><br>
-            <label> Updated Date:    </label>
-            <input type="text" name="newDate"><br>
-            <label> Updated City:    </label>
-            <input type="text" name="newCity"><br>
-            <label> Updated Club:   </label>
-            <input type="text" name="newClub"> <br>
-            <input type="submit" name="Send2" value="Send">
-        </form>
-    </div>
-
-    <div class="deleteConcert">
-        <label> Delete concert: </label>
-        <form method="post">
-            <label> Which data you want to delete? (Write date):  </label>
-            <input type="text" name="date"><br>
-            <input type="submit" name="Send3" value="Send">
-        </form>
-    </div>
 
     <h2>Upcoming concerts:</h2>
 </div>
@@ -118,6 +81,45 @@ $concerts  = $storage->getAll();
         <h2><?=$conc->getClub() ?></h2>
 </div>
 <?php } ?>
+<div class="DBConcerts">
+<div class="addConcert">
+    <label>Add new concert: </label>
+    <form method="post">
+        <label> Date: </label>
+        <input type="text" name="date">
+        <label> City, Country: </label>
+        <input type="text" name="city">
+        <label>Club: </label>
+        <input type="text" name="club">
+        <input type="submit" name="Send1" value="Send">
+
+    </form>
+</div>
+
+<div class="editConcert">
+    <label> Update concert: </label>
+    <form method="post">
+        <label> Which data you want to update? (Write date):  </label>
+        <input type="text" name="date"><br>
+        <label> Updated Date:    </label>
+        <input type="text" name="newDate"><br>
+        <label> Updated City:    </label>
+        <input type="text" name="newCity"><br>
+        <label> Updated Club:   </label>
+        <input type="text" name="newClub"> <br>
+        <input type="submit" name="Send2" value="Send">
+    </form>
+</div>
+
+<div class="deleteConcert">
+    <label> Delete concert: </label>
+    <form method="post">
+        <label> Which data you want to delete? (Write date):  </label>
+        <input type="text" name="date">
+        <input type="submit" name="Send3" value="Send">
+    </form>
+</div>
+</div>
 
 </body>
 </html>

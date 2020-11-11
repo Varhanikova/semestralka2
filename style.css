@@ -3,13 +3,21 @@ body {
     background-color: black;
 }
 .addConcert {
+    margin-top: 5vw;
+
+}
+.DBConcerts{
     color: white;
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-size: 10px;
 }
 .editConcert {
     margin-top: 5vw;
 }
 .deleteConcert{
     margin-top: 5vw;
+    margin-bottom: 5vw;
 }
 
 .logo{
@@ -177,7 +185,7 @@ color: white;
     font-size: 4vw;
 }.napisok h2{
      margin-bottom: 8vw;
-     margin-top: 3vw;
+
     font-size: 3.5vw;
 }
 .btn-outline-success {
@@ -235,6 +243,10 @@ color: white;
      }
 }
 @media only screen and (min-width: 768px) {
+    .DBConcerts{
+
+        font-size: 15px;
+    }
     .fotka1 {
         top: 0;
         margin-left: 10vw;
