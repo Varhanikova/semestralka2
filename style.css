@@ -17,7 +17,7 @@ body {
 }
 .deleteConcert{
     margin-top: 5vw;
-    margin-bottom: 100vw;
+
 }
 
 .logo{
@@ -164,6 +164,7 @@ color: white;
     color: #007bff;
     margin-left: 5vw;
     margin-top: 40vh;
+    margin-bottom: 5vw;
 }
 .buttony button {
     color: #007bff;
