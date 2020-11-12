@@ -3,7 +3,7 @@ body {
     background-color: black;
 }
 .addConcert {
-    margin-top: 50vw;
+    margin-top: 20vw;
 
 }
 .DBConcerts{
@@ -160,6 +160,13 @@ color: white;
 .toop2 a{
     color: #007bff;
     }
+
+.toop3 button{
+    margin-top: 5vw;
+    margin-left: 5vw;
+    font-size: 2.5vw;
+    color: #007bff;
+}
 .toop2 button {
     color: #007bff;
     margin-left: 5vw;
@@ -216,6 +223,11 @@ color: white;
     background-color: grey;
 }
 @media screen and (min-width: 479px) {
+    .toop3 button{
+        font-size: 2vh;
+        margin-left: 25vh;
+        margin-top: 10vh;
+    }
     .kalendare p{
         margin-left: 13.7vh;
         color: black;

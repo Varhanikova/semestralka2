@@ -90,6 +90,9 @@ $concerts  = $storage->getAll();
         <h2><?=$conc->getClub() ?></h2>
 </div>
 <?php } ?>
+<a href="#top" class="toop3">
+    <button>Back to the top ↑ </button>
+</a>
 <div id="Add" class="DBConcerts">
 <div class="addConcert">
     <label>Add new concert: </label>

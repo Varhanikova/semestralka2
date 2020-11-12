@@ -37,12 +37,12 @@ public function saveConcert(Concert $concert): void {
 }
 public function editConcert( string $zaznam,string $newDate,string $newCity, string $newClub) : void {
 
-        $stmt = $this->pdo->prepare("UPDATE concerts SET datum=?, city=?, club=? WHERE datum='$zaznam'");
-        $stmt->execute([$newDate, $newCity,$newClub]);
+        $stmt = $this->pdo->prepare("UPDATE concerts SET datum=?, city=?, club=? WHERE datum=?");
+        $stmt->execute([$newDate, $newCity,$newClub,$zaznam]);
 }
 public function deleteConcert(string $which) {
-    $stmt = $this->pdo->prepare("DELETE FROM concerts WHERE datum='$which'");
-    $stmt->execute();
+    $stmt = $this->pdo->prepare("DELETE FROM concerts WHERE datum=?");
+    $stmt->execute([$which]);
 
 }
 }
