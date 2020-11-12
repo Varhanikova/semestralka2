@@ -10,6 +10,7 @@ if(isset($_POST['Send2']))  {
 if(isset($_POST['Send3']))  {
    $storage->deleteConcert($_POST['date']);
 }
+
 $concerts  = $storage->getAll();
 
 ?>
@@ -61,27 +62,35 @@ $concerts  = $storage->getAll();
 </div>
 
 <div class="napisok col-sm-11">
+    <div id="top" >
     <h1>Thousand Below tour dates 2021</h1>
     <br>
     <p>Thousand Below is currently touring across 9 countries and has 20 upcoming concerts.
         Their next tour date is at Amsterdam Bar & Hall in St. Paul, after that they'll be at Stengade in Copenhagen.
         See all your opportunities to see them live below!</p>
     <br><br>
-
+        <div class="buttony">
+            <a href="#Add"><button> Make change</button></a><br>
+        </div>
 
     <h2>Upcoming concerts:</h2>
 </div>
+</div>
+
+
 <?php  foreach($concerts as $conc) {   ?>
     <div class="kalendare">
+        <div class="kalendarik1">
         <svg  viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
         </svg>
+        </div>
         <p><?=$conc->getDate()?></p>
         <h1><?=$conc->getCity()?></h1>
         <h2><?=$conc->getClub() ?></h2>
 </div>
 <?php } ?>
-<div class="DBConcerts">
+<div id="Add" class="DBConcerts">
 <div class="addConcert">
     <label>Add new concert: </label>
     <form method="post">
@@ -96,7 +105,7 @@ $concerts  = $storage->getAll();
     </form>
 </div>
 
-<div class="editConcert">
+<div  class="editConcert">
     <label> Update concert: </label>
     <form method="post">
         <label> Which data you want to update? (Write date):  </label>
@@ -111,13 +120,16 @@ $concerts  = $storage->getAll();
     </form>
 </div>
 
-<div class="deleteConcert">
+<div  class="deleteConcert">
     <label> Delete concert: </label>
     <form method="post">
         <label> Which data you want to delete? (Write date):  </label>
         <input type="text" name="date">
         <input type="submit" name="Send3" value="Send">
     </form>
+    <a href="#top" class="toop2">
+        <button>Back to the top ↑ </button>
+    </a>
 </div>
 </div>
 

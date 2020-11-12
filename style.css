@@ -3,7 +3,7 @@ body {
     background-color: black;
 }
 .addConcert {
-    margin-top: 5vw;
+    margin-top: 50vw;
 
 }
 .DBConcerts{
@@ -17,7 +17,7 @@ body {
 }
 .deleteConcert{
     margin-top: 5vw;
-    margin-bottom: 5vw;
+    margin-bottom: 100vw;
 }
 
 .logo{
@@ -143,6 +143,7 @@ color: white;
 
 }
 .kalendare{    color: white;}
+
 .kalendare p{
     color: black;
     width: 7vw;
@@ -152,11 +153,27 @@ color: white;
     margin-left: 9vw;
     margin-top: -6.5vw;
 }
-
-.kalendare svg{
-   width:10vw;
+.buttony {
+    margin-top: -2vw;
+    margin-bottom: 5vw;
+}
+.toop2 a{
+    color: #007bff;
+    }
+.toop2 button {
+    color: #007bff;
+    margin-left: 5vw;
+    margin-top: 40vh;
+}
+.buttony button {
+    color: #007bff;
+}
+.kalendarik1 svg{
+    width:10vw;
     height:10vw;
     margin-left: 7vw;
+    margin-top:5vw;}
+.kalendare svg{
     margin-top:5vw;
 }
 .kalendare h1{
@@ -213,6 +230,7 @@ color: white;
         margin-top: 4vh;
         margin-left: 12vh;
     }
+
     .kalendare h1{
         margin-left: 28vh;
         width: 70vh;
@@ -225,7 +243,10 @@ color: white;
         width: 70vh;
         margin-top: -0.2vh;
     }
+    .toop2 button {
 
+        margin-top:40vh;
+    }
     .napisok{
         color: white;
         font-size: 2.2vh;
@@ -247,13 +268,16 @@ color: white;
 
         font-size: 15px;
     }
+    .toop2 button {
+
+        margin-top: 30vh;
+    }
     .fotka1 {
         top: 0;
         margin-left: 10vw;
         width: 30vw;
         height: 13vw;
     }
-
     .napis {
         font-size: 3vw;
         width: 40vw;
