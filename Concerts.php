@@ -1,17 +1,27 @@
 <?php
 require "DB_storage.php";
 $storage = new DB_storage();
-if(isset($_POST['Send1'])) {
-    $storage->createPost($_POST['date'], $_POST['city'],$_POST['club']);
+$concert = new Concert('', '', '');
+if (isset($_GET['a']) == 'delete') {
+    $date = $_GET['date'];
+    $storage->deleteConcert($date);
 }
-if(isset($_POST['Send2']))  {
-    $storage->editConcert($_POST['date'], $_POST['newDate'], $_POST['newCity'],$_POST['newClub']);
+if (isset($_GET['b']) == 'edit') {
+    $date1 = $_GET['date2'];
+    $concert = $storage->getOne($date1);
 }
-if(isset($_POST['Send3']))  {
-   $storage->deleteConcert($_POST['date']);
+if (isset($_POST['Send1'])) {
+    if($_POST['date'] != '' && $_POST['city'] != '' &&$_POST['club'] != '' ) {
+        $storage->createPost($_POST['date'], $_POST['city'], $_POST['club']);
+    } else {
+        
+    }
 }
-
-$concerts  = $storage->getAll();
+if (isset($_POST['Send2'])) {
+    $storage->editConcert($concert->getDate(), $_POST['newDate'], $_POST['newCity'], $_POST['newClub']);
+    header("Location: Concerts.php?#top");
+}
+$concerts = $storage->getAll();
 
 ?>
 <!DOCTYPE html>
@@ -19,17 +29,25 @@ $concerts  = $storage->getAll();
 <head>
     <meta charset="UTF-8">
     <title>Thousand Below</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/e7858c52b6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="top" >
+<div id="top">
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
         <img class="logo" src="logo.png" alt="logo">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06"
+                aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExample06">
@@ -44,7 +62,8 @@ $concerts  = $storage->getAll();
                     <a class="nav-link" href="Concerts.php">Concerts<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Albums</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Albums</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown06">
                         <a class="dropdown-item" href="LoveYouLetTooClose.html">The Love You Let Too Close</a>
                         <a class="dropdown-item" href="GoneInYourWake.html">Gone In Your Wake</a>
@@ -62,79 +81,80 @@ $concerts  = $storage->getAll();
 </div>
 
 <div class="napisok col-sm-11">
-    <div id="top" >
-    <h1>Thousand Below tour dates 2021</h1>
-    <br>
-    <p>Thousand Below is currently touring across 9 countries and has 20 upcoming concerts.
-        Their next tour date is at Amsterdam Bar & Hall in St. Paul, after that they'll be at Stengade in Copenhagen.
-        See all your opportunities to see them live below!</p>
-    <br><br>
+    <div id="top">
+        <h1>Thousand Below tour dates 2021</h1>
+        <br>
+        <p>Thousand Below is currently touring across 9 countries and has 20 upcoming concerts.
+            Their next tour date is at Amsterdam Bar & Hall in St. Paul, after that they'll be at Stengade in
+            Copenhagen.
+            See all your opportunities to see them live below!</p>
+        <br><br>
         <div class="buttony">
-            <a href="#Add"><button> Make change</button></a><br>
+            <a href="?c=add#Add">
+                <button> Add new concert</button>
+            </a><br>
         </div>
 
-    <h2>Upcoming concerts:</h2>
+        <h2>Upcoming concerts:</h2>
+    </div>
 </div>
-</div>
-
-
-<?php  foreach($concerts as $conc) {   ?>
+<?php foreach ($concerts as $conc) { ?>
     <div class="kalendare">
         <div class="kalendarik1">
-        <svg  viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
-        </svg>
+            <svg viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
         </div>
-        <p><?=$conc->getDate()?></p>
-        <h1><?=$conc->getCity()?></h1>
-        <h2><?=$conc->getClub() ?></h2>
-</div>
+        <p><?= $conc->getDate() ?></p>
+        <h1><?= $conc->getCity() ?></h1>
+        <h2><?= $conc->getClub() ?></h2>
+        <a href="<?= "?a=delete" .  "&date=" . $conc->getDate() ?>">
+            <button type="button">X</button>
+        </a>
+        <div class="editko">
+        <a href="<?= "?b=edit" ."&date2=" . $conc->getDate() . "#Edit" ?> ">
+            <i class="fas fa-edit"></i>
+        </a>
+        </div>
+
+    </div>
 <?php } ?>
-<a href="#top" class="toop3">
-    <button>Back to the top ↑ </button>
+<a href="Concerts.php" class="toop3">
+    <button>Back to the top ↑</button>
 </a>
+
 <div id="Add" class="DBConcerts">
-<div class="addConcert">
-    <label>Add new concert: </label>
-    <form method="post">
-        <label> Date: </label>
-        <input type="text" name="date">
-        <label> City, Country: </label>
-        <input type="text" name="city">
-        <label>Club: </label>
-        <input type="text" name="club">
-        <input type="submit" name="Send1" value="Send">
-
-    </form>
+    <?php
+    if(isset($_GET['c'] )=='add') {?>
+    <div class="addConcert">
+        <label>Add new concert: </label>
+        <form method="post">
+            <label> Date: </label>
+            <input type="text" name="date">
+            <label> City, Country: </label>
+            <input type="text" name="city">
+            <label>Club: </label>
+            <input type="text" name="club">
+            <input type="submit" name="Send1" value="Send">
+        </form>
+    </div>
 </div>
-
-<div  class="editConcert">
-    <label> Update concert: </label>
-    <form method="post">
-        <label> Which data you want to update? (Write date):  </label>
-        <input type="text" name="date"><br>
-        <label> Updated Date:    </label>
-        <input type="text" name="newDate"><br>
-        <label> Updated City:    </label>
-        <input type="text" name="newCity"><br>
-        <label> Updated Club:   </label>
-        <input type="text" name="newClub"> <br>
-        <input type="submit" name="Send2" value="Send">
-    </form>
+    <?php } ?>
+<div id="Edit" class="DBConcerts" >
+    <?php if(isset($_GET['b'])=='edit') {?>
+    <div class="editConcert">
+        <label> Update concert: </label>
+        <form method="post">
+            <label> Updated Date:</label>
+            <input type="text" name="newDate" value="<?= $concert->getDate() ?>">
+            <label> Updated City:</label>
+            <input type="text" name="newCity" value="<?= $concert->getCity() ?>">
+            <label> Updated Club:</label>
+            <input type="text" name="newClub" value="<?= $concert->getClub() ?>">
+            <input type="submit" name="Send2" value="Send">
+        </form>
+    </div>
+    <?php } ?>
 </div>
-
-<div  class="deleteConcert">
-    <label> Delete concert: </label>
-    <form method="post">
-        <label> Which data you want to delete? (Write date):  </label>
-        <input type="text" name="date">
-        <input type="submit" name="Send3" value="Send">
-    </form>
-    <a href="#top" class="toop2">
-        <button>Back to the top ↑ </button>
-    </a>
-</div>
-</div>
-
 </body>
 </html>

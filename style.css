@@ -17,9 +17,7 @@ body {
 }
 .deleteConcert{
     margin-top: 5vw;
-
 }
-
 .logo{
     height: 50px;
     width: 50px;
@@ -144,6 +142,13 @@ color: white;
 }
 .kalendare{    color: white;}
 
+.kalendare a {
+    margin-left: 54vw;
+    position: relative;
+    top: -7vh;
+    font-size: 2.5vw;
+}
+
 .kalendare p{
     color: black;
     width: 7vw;
@@ -222,7 +227,22 @@ color: white;
     border-color: black;
     background-color: grey;
 }
+i.fas.fa-edit {
+    color: white;
+    font-size: 3vh;
+}
+.editko{
+    margin-left: 0;
+    margin-bottom: -4vh;
+}
 @media screen and (min-width: 479px) {
+    .kalendare a{
+        margin-left: 60vh;
+        position: relative;
+        top: -6vh;
+        font-size: 1.5vh;
+
+    }
     .toop3 button{
         font-size: 2vh;
         margin-left: 25vh;
@@ -277,9 +297,17 @@ color: white;
      }
 }
 @media only screen and (min-width: 768px) {
+    .kalendare a{
+        margin-left: 60vh;
+        position: relative;
+        top: -7.5vh;
+        font-size: 1.5vh;
+
+    }
     .DBConcerts{
 
         font-size: 15px;
+        margin-bottom: 49vw;
     }
     .toop2 button {
 

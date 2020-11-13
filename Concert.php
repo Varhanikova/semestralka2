@@ -1,6 +1,6 @@
 <?php
 
-
+declare(strict_types=1);
 class Concert
 {
 private string $date;
@@ -27,5 +27,29 @@ private string $club;
     public function getClub() : string
     {
         return $this->club;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity(string $city): void
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @param string $club
+     */
+    public function setClub(string $club): void
+    {
+        $this->club = $club;
+    }
+
+    /**
+     * @param string $date
+     */
+    public function setDate(string $date): void
+    {
+        $this->date = $date;
     }
 }

@@ -17,7 +17,7 @@ public function __construct() {
 
 }
 public function getAll() : array {
-    $stmt = $this->pdo->query("SELECT * FROM concerts");
+    $stmt = $this->pdo->query("SELECT * FROM concerts ORDER BY datum");
     $concerts = [];
     while($row = $stmt->fetch()) {
 
@@ -44,5 +44,15 @@ public function deleteConcert(string $which) {
     $stmt = $this->pdo->prepare("DELETE FROM concerts WHERE datum=?");
     $stmt->execute([$which]);
 
+}
+public function getOne(string $datum) : Concert{
+    $concert = new Concert('date','city','club');
+    $stmt = $this->pdo->query("SELECT * FROM concerts WHERE datum='$datum'");
+    $row = $stmt->fetch();
+        $concert->setDate($row['datum']);
+        $concert->setCity($row['city']);
+        $concert->setClub($row['club']);
+
+    return $concert;
 }
 }
