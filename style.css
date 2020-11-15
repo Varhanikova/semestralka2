@@ -2,6 +2,17 @@
 body {
     background-color: black;
 }
+.notif {
+    /*color: black;
+    background: bisque;
+    position: relative;
+
+    font-size: 3vw;
+    top: 3vw  ;*/
+    text-align: center;
+    top: -140vw;
+    width: 100%;
+}
 .addConcert {
     margin-top: 20vw;
 
@@ -11,6 +22,7 @@ body {
     margin-left: 5vw;
     margin-top: 5vw;
     font-size: 10px;
+    margin-bottom:150vw;
 }
 .editConcert {
     margin-top: 5vw;
@@ -190,7 +202,7 @@ color: white;
     margin-top:5vw;
 }
 .kalendare h1{
-    width: 70vw;
+    width: 35vw;
     font-size: 3vw;
     margin-top:-11.8vw;
     margin-left:20vw;
@@ -198,7 +210,7 @@ color: white;
 
 .kalendare h2{
     font-size: 2vw;
-    width: 70vw;
+    width: 35vw;
     margin-top: -1vw;
     margin-left:20vw;
 }
@@ -232,8 +244,11 @@ i.fas.fa-edit {
     font-size: 3vh;
 }
 .editko{
-    margin-left: 0;
+    margin-left: 8vw;
     margin-bottom: -4vh;
+}
+.kalendare button {
+    margin-left: 8vw;
 }
 @media screen and (min-width: 479px) {
     .kalendare a{
@@ -243,6 +258,7 @@ i.fas.fa-edit {
         font-size: 1.5vh;
 
     }
+
     .toop3 button{
         font-size: 2vh;
         margin-left: 25vh;
@@ -266,14 +282,14 @@ i.fas.fa-edit {
 
     .kalendare h1{
         margin-left: 28vh;
-        width: 70vh;
+        width: 35vh;
         font-size: 2.5vh;
         margin-top: -10vh;
     }
     .kalendare h2{
         font-size: 2.2vh;
         margin-left: 28vh;
-        width: 70vh;
+        width: 35vh;
         margin-top: -0.2vh;
     }
     .toop2 button {
@@ -297,6 +313,7 @@ i.fas.fa-edit {
      }
 }
 @media only screen and (min-width: 768px) {
+    .notif{  top: -41vw;}
     .kalendare a{
         margin-left: 60vh;
         position: relative;
@@ -305,7 +322,6 @@ i.fas.fa-edit {
 
     }
     .DBConcerts{
-
         font-size: 15px;
         margin-bottom: 49vw;
     }
@@ -366,49 +382,6 @@ i.fas.fa-edit {
     margin-left: 10vh;
 }
 
-  /*  .kalendare p{
-        margin-left: 13.7vh;
-        color: black;
-        width: 7vh;
-        font-size: 2vh;
-        font-weight: bolder;
-        text-align: center;
-        margin-top: -6.5vh;
-    }
-    .kalendare svg{
-        width:10vh;
-        height:10vh;
-        margin-top: 4vh;
-        margin-left: 12vh;
-    }
-    .kalendare h1{
-        margin-left: 28vh;
-        width: 70vh;
-        font-size: 2.5vh;
-        margin-top: -10vh;
-    }
-    .kalendare h2{
-        font-size: 2.2vh;
-        margin-left: 28vh;
-        width: 70vh;
-        margin-top: -0.2vh;
-    }
-
-    .napisok{
-        color: white;
-        font-size: 2.2vh;
-        top: 5vh;
-        width: 95vw;
-        margin-left: 10vh;
-    }
-    .napisok h1{
-
-        font-size: 3.5vh;
-    }.napisok h2{
-             font-size: 3vh;
-             margin-top: -3vh;
-             margin-bottom: 9vh;
-     }*/
 }
 .bg-dark {
     background-color: black!important;

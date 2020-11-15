@@ -30,6 +30,7 @@ public function getAll() : array {
     {
         $concert = new Concert($date,$city,$club);
         $this->saveConcert($concert);
+
     }
 public function saveConcert(Concert $concert): void {
     $stmt = $this->pdo->prepare("INSERT INTO concerts(datum,city,club) VALUES(?,?,?)");
@@ -55,4 +56,5 @@ public function getOne(string $datum) : Concert{
 
     return $concert;
 }
+
 }

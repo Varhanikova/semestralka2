@@ -11,10 +11,12 @@ if (isset($_GET['b']) == 'edit') {
     $concert = $storage->getOne($date1);
 }
 if (isset($_POST['Send1'])) {
-    if($_POST['date'] != '' && $_POST['city'] != '' &&$_POST['club'] != '' ) {
-        $storage->createPost($_POST['date'], $_POST['city'], $_POST['club']);
-    } else {
-        
+    if ($_POST['date'] != '' || $_POST['city'] != '' || $_POST['club'] != '') {
+        $a = htmlspecialchars($_POST['date']);
+        $b = htmlspecialchars($_POST['city']);
+        $c = htmlspecialchars($_POST['club']);
+        $storage->createPost($a, $b, $c);
+        header("Location: Concerts.php?#top");
     }
 }
 if (isset($_POST['Send2'])) {
@@ -27,8 +29,8 @@ $concerts = $storage->getAll();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Thousand Below</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -84,9 +86,9 @@ $concerts = $storage->getAll();
     <div id="top">
         <h1>Thousand Below tour dates 2021</h1>
         <br>
-        <p>Thousand Below is currently touring across 9 countries and has 20 upcoming concerts.
-            Their next tour date is at Amsterdam Bar & Hall in St. Paul, after that they'll be at Stengade in
-            Copenhagen.
+        <p>Thousand Below is currently touring across 7 countries and has <?= sizeof($concerts) ?> upcoming concerts.
+            Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in
+            <?= $concerts[1]->getCity() ?>.
             See all your opportunities to see them live below!</p>
         <br><br>
         <div class="buttony">
@@ -108,7 +110,7 @@ $concerts = $storage->getAll();
         <p><?= $conc->getDate() ?></p>
         <h1><?= $conc->getCity() ?></h1>
         <h2><?= $conc->getClub() ?></h2>
-        <a href="<?= "?a=delete" .  "&date=" . $conc->getDate() ?>">
+        <a href="<?= "?a=delete" . "&date=" . $conc->getDate() ?>">
             <button type="button">X</button>
         </a>
         <div class="editko">
@@ -130,7 +132,7 @@ $concerts = $storage->getAll();
         <label>Add new concert: </label>
         <form method="post">
             <label> Date: </label>
-            <input type="text" name="date">
+            <input type="date" name="date">
             <label> City, Country: </label>
             <input type="text" name="city">
             <label>Club: </label>
@@ -140,6 +142,15 @@ $concerts = $storage->getAll();
     </div>
 </div>
     <?php } ?>
+<?php if (isset($_POST['Send1'])) {
+if ($_POST['date'] != '' || $_POST['city'] != '' || $_POST['club'] != '') {
+} else { ?>
+
+<div class="notif alert alert-primary" role="alert">
+       Prázdne polia!
+    </div>
+<?php }
+}?>
 <div id="Edit" class="DBConcerts" >
     <?php if(isset($_GET['b'])=='edit') {?>
     <div class="editConcert">
