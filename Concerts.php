@@ -86,7 +86,7 @@ $concerts = $storage->getAll();
     <div id="top">
         <h1>Thousand Below tour dates 2021</h1>
         <br>
-        <p>Thousand Below is currently touring across 7 countries and has <?= sizeof($concerts) ?> upcoming concerts.
+        <p>Thousand Below is currently touring across 9 countries and has <?= sizeof($concerts) ?> upcoming concerts.
             Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in
             <?= $concerts[1]->getCity() ?>.
             See all your opportunities to see them live below!</p>
