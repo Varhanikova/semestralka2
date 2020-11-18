@@ -68,5 +68,10 @@ class DB_storage
 
         return $concert;
     }
-
+    public function isThere(string $datumik) {
+        $pom ='';
+        $stmt = $this->pdo->query("SELECT * FROM concerts WHERE datum='$datumik'");
+        $pom = $stmt->fetch()['datum'];
+        return $pom;
+    }
 }

@@ -12,7 +12,7 @@ if (isset($_GET['b']) == 'edit') {
     $concert = $storage->getOne($date1);
 }
 if (isset($_POST['Send1'])) {
-    if (($_POST['date'] != '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d")) {
+    if (($_POST['date'] != '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '') {
         $a = htmlspecialchars($_POST['date']);
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
@@ -21,7 +21,7 @@ if (isset($_POST['Send1'])) {
     }
 }
 if (isset($_POST['Send2'])) {
-    if (($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d")) {
+    if (($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && ($storage->isThere($_POST['newDate']) == '') || $storage->isThere($_POST['newDate']) == $concert->getDate()) {
         $a = htmlspecialchars($_POST['newDate']);
         $b = htmlspecialchars($_POST['newCity']);
         $c = htmlspecialchars($_POST['newClub']);
@@ -160,6 +160,10 @@ if (isset($_POST['Send1'])) {
         <div class="notif alert alert-primary" role="alert">
             Wrong date!
         </div>
+    <?php } elseif ($storage->isThere($_POST['date']) != '') { ?>
+        <div class="notif alert alert-primary" role="alert">
+            You can't use this date
+        </div>
     <?php }
 }
 if (isset($_POST['Send2'])) {
@@ -171,6 +175,10 @@ if (isset($_POST['Send2'])) {
     <?php } elseif ($_POST['newDate'] < date("Y-m-d")) { ?>
         <div class="notif2 alert alert-primary" role="alert">
             Wrong date!
+        </div>
+    <?php } elseif ($storage->isThere($_POST['newDate']) != '' && $storage->isThere($_POST['newDate']) != $concert->getDate()) { ?>
+        <div class="notif2 alert alert-primary" role="alert">
+            You can't use this date
         </div>
     <?php }
 } ?>

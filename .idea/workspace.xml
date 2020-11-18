@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="upravy na spodok stránky">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/515b3956-19b1-41fb-8873-0bfbe8df1d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/515b3956-19b1-41fb-8873-0bfbe8df1d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Concerts.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Concerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Concerts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB_storage.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB_storage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +44,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1ixdNz51BfbTu6GgwNqN4z5PjIQ" />
   <component name="ProjectViewState">
@@ -83,7 +87,7 @@
       <workItem from="1605255285341" duration="23198000" />
       <workItem from="1605438129899" duration="10242000" />
       <workItem from="1605470648665" duration="396000" />
-      <workItem from="1605705948341" duration="7286000" />
+      <workItem from="1605705948341" duration="10754000" />
     </task>
     <task id="LOCAL-00001" summary="funguje mi php zatiaľ">
       <created>1605125382434</created>
@@ -176,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605733531062</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="kontrola aj pre edit">
+      <created>1605734742816</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605734742816</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +219,8 @@
     <MESSAGE value="číslo" />
     <MESSAGE value="width of class bla" />
     <MESSAGE value="schopný if + kontrola dátumov" />
-    <option name="LAST_COMMIT_MESSAGE" value="schopný if + kontrola dátumov" />
+    <MESSAGE value="kontrola aj pre edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="kontrola aj pre edit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605124124540">
@@ -231,10 +243,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605262121991" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605733542169">
+    <state x="499" y="114" key="RollbackChangesDialog" timestamp="1605736609800">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605733542169" />
+    <state x="499" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605736609800" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605734747586">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605734747586" />
     <state x="668" y="289" width="422" height="297" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605124150573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -251,17 +267,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="232" width="403" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1605122436404" />
-    <state x="80" y="193" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1605445730495">
+    <state x="80" y="193" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1605737835914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="80" y="193" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1605445730495" />
+    <state x="80" y="193" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1605737835914" />
     <state x="611" y="260" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1605123837587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="611" y="260" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/0.0.1536.824@0.0.1536.824" timestamp="1605123837587" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605736567907">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605736567907" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1605444982388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605444982388" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1605735459811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605735459811" />
   </component>
 </project>
