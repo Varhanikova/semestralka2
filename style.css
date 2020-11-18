@@ -2,56 +2,73 @@
 body {
     background-color: black;
 }
+
 .notif {
-        text-align: center;
+    text-align: center;
     top: -140vw;
     width: 100%;
 }
-.notif2{
+
+.notif2 {
     text-align: center;
     top: 55vw;
     width: 100%;
 }
+
 .addConcert {
     margin-top: 20vw;
 
 }
-.DBConcerts{
+
+.DBConcerts {
     color: white;
     margin-left: 0vw;
     margin-top: 5vw;
     font-size: 10px;
-    margin-bottom:150vw;
+    margin-bottom: 150vw;
 }
+
 .editConcert {
     margin-top: 5vw;
 }
-.deleteConcert{
+
+.deleteConcert {
     margin-top: 5vw;
 }
-.logo{
+
+.logo {
     height: 50px;
     width: 50px;
 }
-.fotka{
+
+.fotka {
     width: 45vw;
-    margin-left:8vw;
+    margin-left: 8vw;
 }
-.fotka2{
+
+.fotka2 {
     width: 45vw;
     margin-left: 50vw;
-}.fotka3{
-     width: 45vw;
-     margin-left:8vw;
 }
- .fotka:hover {
-     opacity: 0.7;
- }.fotka2:hover {
-     opacity: 0.7;
- }.fotka3:hover {
-     opacity: 0.7;
- }
-.napis{
+
+.fotka3 {
+    width: 45vw;
+    margin-left: 8vw;
+}
+
+.fotka:hover {
+    opacity: 0.7;
+}
+
+.fotka2:hover {
+    opacity: 0.7;
+}
+
+.fotka3:hover {
+    opacity: 0.7;
+}
+
+.napis {
     position: relative;
     color: white;
     top: 2vh;
@@ -60,6 +77,7 @@ body {
     height: 15vw;
     text-align: center;
 }
+
 .fotka1 {
     position: relative;
     top: 0;
@@ -67,91 +85,114 @@ body {
     width: 25vw;
     margin-left: 30vw;
 }
+
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
-.fotka5{
+
+.fotka5 {
     height: 22.5vh;
     width: 100%;
     position: relative;
     top: 2vh;
 }
-.bioo{
+
+.bioo {
     font-size: 2vh;
     color: white;
     position: relative;
-    margin-left:5vw;
+    margin-left: 5vw;
     width: 90%;
-    top:5vh;
+    top: 5vh;
 }
-.bioo h1{
+
+.bioo h1 {
 
     font-size: 4vh;
 }
-.bioo h2{
+
+.bioo h2 {
 
     font-size: 3vh;
 }
-.album1{
+
+.album1 {
     height: 35vw;
-    width: 35vw ;
+    width: 35vw;
     position: absolute;
-    right:0;
+    right: 0;
 }
-.songy{
+
+.songy {
     font-size: 2vh;
     position: relative;
-    top:5vw;
+    top: 5vw;
     height: 100vh;
     margin-left: 1vw;
     color: white;
     width: 60vw;
 }
-.songy ul li{
+
+.songy ul li {
     margin: 1vw;
 }
+
 .songy ul a {
     text-decoration: none;
     color: white;
-}.songy ul li:hover a{
-     background-color: lightslategray;
- }
- .songy h2{
-     font-size: 3vh;
-     margin-left: 1vh;
-     margin-bottom: 3vh;
- }
+}
+
+.songy ul li:hover a {
+    background-color: lightslategray;
+}
+
+.songy h2 {
+    font-size: 3vh;
+    margin-left: 1vh;
+    margin-bottom: 3vh;
+}
+
 .toop {
     color: orangered;
 }
+
 .toop:hover {
     color: bisque;
 }
-.bla{
+
+.bla {
     font-size: 2vh;
     color: white;
     text-align: center;
     width: 100%;
 }
-.bla h1{
+
+.bla h1 {
     font-size: 4vh;
     text-align: center;
 
 }
-.bla h2{
+
+.bla h2 {
     font-size: 3vh;
     text-align: center;
 }
 
-p{ white-space: pre-line;}
+p {
+    white-space: pre-line;
+}
+
 .kalendarikk {
-color: white;
+    color: white;
 
 }
-.kalendare{    color: white;}
+
+.kalendare {
+    color: white;
+}
 
 .kalendare a {
     margin-left: 54vw;
@@ -160,7 +201,7 @@ color: white;
     font-size: 2.5vw;
 }
 
-.kalendare p{
+.kalendare p {
     color: black;
     width: 7vw;
     font-size: 2vw;
@@ -169,88 +210,105 @@ color: white;
     margin-left: 9vw;
     margin-top: -6.5vw;
 }
+
 .buttony {
     margin-top: -2vw;
     margin-bottom: 5vw;
 }
-.toop2 a{
-    color: #007bff;
-    }
 
-.toop3 button{
+.toop2 a {
+    color: #007bff;
+}
+
+.toop3 button {
     margin-top: 5vw;
     margin-left: 5vw;
     font-size: 2.5vw;
     color: #007bff;
 }
+
 .toop2 button {
     color: #007bff;
     margin-left: 5vw;
     margin-top: 40vh;
     margin-bottom: 5vw;
 }
+
 .buttony button {
     color: #007bff;
 }
-.kalendarik1 svg{
-    width:10vw;
-    height:10vw;
+
+.kalendarik1 svg {
+    width: 10vw;
+    height: 10vw;
     margin-left: 7vw;
-    margin-top:5vw;}
-.kalendare svg{
-    margin-top:5vw;
-}
-.kalendare h1{
-    width: 35vw;
-    font-size: 3vw;
-    margin-top:-11.8vw;
-    margin-left:20vw;
+    margin-top: 5vw;
 }
 
-.kalendare h2{
+.kalendare svg {
+    margin-top: 5vw;
+}
+
+.kalendare h1 {
+    width: 35vw;
+    font-size: 3vw;
+    margin-top: -11.8vw;
+    margin-left: 20vw;
+}
+
+.kalendare h2 {
     font-size: 2vw;
     width: 35vw;
     margin-top: -1vw;
-    margin-left:20vw;
+    margin-left: 20vw;
 }
 
-.napisok{
+.napisok {
     color: white;
     font-size: 3vw;
     top: 5vw;
     width: 100%;
     margin-left: 2vw;
 }
-.napisok h1{
+
+.napisok h1 {
 
     font-size: 4vw;
-}.napisok h2{
-     margin-bottom: 8vw;
+}
+
+.napisok h2 {
+    margin-bottom: 8vw;
 
     font-size: 3.5vw;
 }
+
 .btn-outline-success {
     color: black;
     border-color: black;
     background-color: white;
 }
-.btn-outline-success:hover{
+
+.btn-outline-success:hover {
     border-color: black;
     background-color: grey;
 }
+
 i.fas.fa-edit {
     color: white;
     font-size: 3vh;
 }
-.editko{
+
+.editko {
     margin-left: 8vw;
     margin-bottom: -4vh;
 }
+
 .kalendare button {
     margin-left: 8vw;
 }
+
 @media screen and (min-width: 479px) {
-    .kalendare a{
+    .kalendare a {
         margin-left: 60vh;
         position: relative;
         top: -6vh;
@@ -258,12 +316,13 @@ i.fas.fa-edit {
 
     }
 
-    .toop3 button{
+    .toop3 button {
         font-size: 2vh;
         margin-left: 25vh;
         margin-top: 10vh;
     }
-    .kalendare p{
+
+    .kalendare p {
         margin-left: 13.7vh;
         color: black;
         width: 7vh;
@@ -272,68 +331,86 @@ i.fas.fa-edit {
         text-align: center;
         margin-top: -6.5vh;
     }
-    .kalendare svg{
-        width:10vh;
-        height:10vh;
+
+    .kalendare svg {
+        width: 10vh;
+        height: 10vh;
         margin-top: 4vh;
         margin-left: 12vh;
     }
 
-    .kalendare h1{
+    .kalendare h1 {
         margin-left: 28vh;
         width: 35vh;
         font-size: 2.5vh;
         margin-top: -10vh;
     }
-    .kalendare h2{
+
+    .kalendare h2 {
         font-size: 2.2vh;
         margin-left: 28vh;
         width: 35vh;
         margin-top: -0.2vh;
     }
+
     .toop2 button {
 
-        margin-top:40vh;
+        margin-top: 40vh;
     }
-    .napisok{
+
+    .napisok {
         color: white;
         font-size: 2.2vh;
         top: 5vh;
         width: 90vw;
         margin-left: 5vh;
     }
-    .napisok h1{
+
+    .napisok h1 {
 
         font-size: 3.5vh;
-    }.napisok h2{
-         font-size: 3vh;
-         margin-top: 5vh;
-         margin-bottom: 9vh;
-     }
+    }
+
+    .napisok h2 {
+        font-size: 3vh;
+        margin-top: 5vh;
+        margin-bottom: 9vh;
+    }
 }
+
 @media only screen and (min-width: 768px) {
-    .notif{  top: -41vw;}
-    .notif2{top: 25vw;}
-    .kalendare a{
+    .notif {
+        top: -41vw;
+    }
+
+    .notif2 {
+        top: 25vw;
+    }
+
+    .kalendare a {
         margin-left: 60vh;
         position: relative;
         top: -7.5vh;
         font-size: 1.5vh;
     }
-    .DBConcerts{
+
+    .DBConcerts {
         font-size: 15px;
         margin-bottom: 49vw;
     }
+
     .toop2 button {
 
         margin-top: 30vh;
     }
+
     .fotka1 {
         top: 0;
         margin-left: 10vw;
         width: 30vw;
         height: 13vw;
     }
+
     .napis {
         font-size: 3vw;
         width: 40vw;
@@ -346,17 +423,20 @@ i.fas.fa-edit {
         width: 20vw;
         top: -29vw;
     }
-.fotka2{
-    top: -26vw;
-    width: 20vw;
-    margin-left: 77vw;
-}
-.fotka3{
-    width: 20vw;
-    top: -44vw;
-    margin-left: 48vw;
 
-}
+    .fotka2 {
+        top: -26vw;
+        width: 20vw;
+        margin-left: 77vw;
+    }
+
+    .fotka3 {
+        width: 20vw;
+        top: -44vw;
+        margin-left: 48vw;
+
+    }
+
     .fotka5 {
         height: 12.5vw;
         width: 30vw;
@@ -374,15 +454,18 @@ i.fas.fa-edit {
         margin-left: 35vw;
 
     }
+
     .songy {
         margin-left: 5vw;
     }
-.napisok{
-    margin-left: 10vh;
-}
+
+    .napisok {
+        margin-left: 10vh;
+    }
 
 }
+
 .bg-dark {
-    background-color: black!important;
+    background-color: black !important;
 }
 
