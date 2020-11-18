@@ -21,7 +21,7 @@ if (isset($_POST['Send1'])) {
     }
 }
 if (isset($_POST['Send2'])) {
-    if (($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && ($storage->isThere($_POST['newDate']) == '') || $storage->isThere($_POST['newDate']) == $concert->getDate()) {
+    if (($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && (($storage->isThere($_POST['newDate']) == '') || ($storage->isThere($_POST['newDate']) == $concert->getDate()))) {
         $a = htmlspecialchars($_POST['newDate']);
         $b = htmlspecialchars($_POST['newCity']);
         $c = htmlspecialchars($_POST['newClub']);
@@ -167,7 +167,7 @@ if (isset($_POST['Send1'])) {
     <?php }
 }
 if (isset($_POST['Send2'])) {
-    if (($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '')) {
+    if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '') {
         ?>
         <div class="notif2 alert alert-primary" role="alert">
             Something is missing there..
