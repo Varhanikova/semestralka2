@@ -5,13 +5,14 @@ $concert = new Concert('', '', '');
 if (isset($_GET['a']) == 'delete') {
     $date = $_GET['date'];
     $storage->deleteConcert($date);
+    header("Location: Concerts.php?#top");
 }
 if (isset($_GET['b']) == 'edit') {
     $date1 = $_GET['date2'];
     $concert = $storage->getOne($date1);
 }
 if (isset($_POST['Send1'])) {
-    if ($_POST['date'] != '' || $_POST['city'] != '' || $_POST['club'] != '') {
+    if (($_POST['date'] != '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date']>=date("Y-m-d")) {
         $a = htmlspecialchars($_POST['date']);
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
@@ -20,8 +21,10 @@ if (isset($_POST['Send1'])) {
     }
 }
 if (isset($_POST['Send2'])) {
-    $storage->editConcert($concert->getDate(), $_POST['newDate'], $_POST['newCity'], $_POST['newClub']);
-    header("Location: Concerts.php?#top");
+    if(isset($_POST['Send2'])&&$_POST['newDate']>=date("Y-m-d")) {
+        $storage->editConcert($concert->getDate(), $_POST['newDate'], $_POST['newCity'], $_POST['newClub']);
+        header("Location: Concerts.php?#top");
+    }
 }
 $concerts = $storage->getAll();
 
@@ -100,6 +103,7 @@ $concerts = $storage->getAll();
         <h2>Upcoming concerts:</h2>
     </div>
 </div>
+
 <?php foreach ($concerts as $conc) { ?>
     <div class="kalendare">
         <div class="kalendarik1">
@@ -118,13 +122,11 @@ $concerts = $storage->getAll();
             <i class="fas fa-edit"></i>
         </a>
         </div>
-
     </div>
 <?php } ?>
 <a href="Concerts.php" class="toop3">
     <button>Back to the top ↑</button>
 </a>
-
 <div id="Add" class="DBConcerts">
     <?php
     if(isset($_GET['c'] )=='add') {?>
@@ -141,23 +143,33 @@ $concerts = $storage->getAll();
         </form>
     </div>
 </div>
-    <?php } ?>
-<?php if (isset($_POST['Send1'])) {
-if ($_POST['date'] != '' || $_POST['city'] != '' || $_POST['club'] != '') {
-} else { ?>
+<?php } ?>
+<?php
+if (isset($_POST['Send1'])) {
+    if(isset($_POST['Send1']) && ($_POST['date'] =='' || $_POST['city'] =='' || $_POST['club'] =='')) {
 
-<div class="notif alert alert-primary" role="alert">
-       Prázdne polia!
+    ?>
+        <div class="notif alert alert-primary" role="alert">
+            Something is missing there..
+        </div>
+    <?php }elseif($_POST['date']<date("Y-m-d")) { ?>
+    <div class="notif alert alert-primary" role="alert">
+        wrong date
     </div>
-<?php }
-}?>
+   <?php }
+ } elseif (isset($_POST['Send2'])&&$_POST['newDate']<date("Y-m-d")) { ?>
+    <div class="notif2 alert alert-primary" role="alert">
+        wrong date
+    </div>
+<?php } ?>
+
 <div id="Edit" class="DBConcerts" >
     <?php if(isset($_GET['b'])=='edit') {?>
     <div class="editConcert">
         <label> Update concert: </label>
         <form method="post">
             <label> Updated Date:</label>
-            <input type="text" name="newDate" value="<?= $concert->getDate() ?>">
+            <input type="date" name="newDate" value="<?= $concert->getDate() ?>">
             <label> Updated City:</label>
             <input type="text" name="newCity" value="<?= $concert->getCity() ?>">
             <label> Updated Club:</label>

@@ -28,9 +28,8 @@ public function getAll() : array {
     }
     public function createPost(string $date, string $city,string $club) : void
     {
-        $concert = new Concert($date,$city,$club);
+        $concert = new Concert($date, $city, $club);
         $this->saveConcert($concert);
-
     }
 public function saveConcert(Concert $concert): void {
     $stmt = $this->pdo->prepare("INSERT INTO concerts(datum,city,club) VALUES(?,?,?)");

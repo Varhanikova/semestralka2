@@ -3,14 +3,13 @@ body {
     background-color: black;
 }
 .notif {
-    /*color: black;
-    background: bisque;
-    position: relative;
-
-    font-size: 3vw;
-    top: 3vw  ;*/
-    text-align: center;
+        text-align: center;
     top: -140vw;
+    width: 100%;
+}
+.notif2{
+    text-align: center;
+    top: 55vw;
     width: 100%;
 }
 .addConcert {
@@ -19,7 +18,7 @@ body {
 }
 .DBConcerts{
     color: white;
-    margin-left: 5vw;
+    margin-left: 0vw;
     margin-top: 5vw;
     font-size: 10px;
     margin-bottom:150vw;
@@ -314,12 +313,12 @@ i.fas.fa-edit {
 }
 @media only screen and (min-width: 768px) {
     .notif{  top: -41vw;}
+    .notif2{top: 25vw;}
     .kalendare a{
         margin-left: 60vh;
         position: relative;
         top: -7.5vh;
         font-size: 1.5vh;
-
     }
     .DBConcerts{
         font-size: 15px;
