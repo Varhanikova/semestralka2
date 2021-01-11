@@ -1,14 +1,15 @@
 <?php
 declare(strict_types=1);
 require_once "Concert.php";
-
+require_once "Song.php";
+require_once "Login.php";
 class DB_storage
 {
     private PDO $pdo;
-    private $user = "root";
-    private $pass = "dtb456";
-    private $db = "concerts";
-    private $host = "localhost";
+    private string $user = "root";
+    private string $pass = "dtb456";
+    private string  $db = "concerts";
+    private string $host = "localhost";
     private string $filePath = "DB_storage.php";
 
     public function __construct()
@@ -18,7 +19,50 @@ class DB_storage
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,]);
 
     }
+public function controlPass($name,$pass): bool {
+    $stmt = $this->pdo->query("SELECT heslo FROM prihlasenie WHERE name='$name'");
+    if($stmt->fetch()['heslo'] == $pass) {
+        return true;
+    } else {return false;}
+}
+    public function control($name,$pass): int {
 
+       // $login = new Login('0', '0');
+        $stmt = $this->pdo->query("SELECT * FROM prihlasenie WHERE name='$name'");
+
+        if($stmt->fetch()['name']==$name) {
+            if($this->controlPass($name,$pass)) {
+                return 0;
+            } else {
+                return 2;
+            }
+        } else {
+            return 1;
+        }
+
+
+}
+    public function createSong(string $name, string $text, string $album){
+        $song = new Song($name,$text,$album);
+        $this->saveSong($song);
+    }
+    public function saveSong(Song $song): void
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO songs(nazov,text,album) VALUES(?,?,?)");
+        $stmt->execute([$song->getName(), $song->getText(), $song->getAlbum()]);
+    }
+    public function vsetkyZAlbumu(string $album): array {
+        $stmt = $this->pdo->prepare("SELECT * FROM songs WHERE album=?");
+        $stmt->execute([$album]);
+        $songs = [];
+
+        while ($row = $stmt->fetch()) {
+
+            $song = new Song($row['nazov'], $row['text'], $row['album']);
+            $songs[] = $song;
+        }
+        return $songs;
+    }
     public function getAll(): array
     {
         $stmt = $this->pdo->query("SELECT * FROM concerts ORDER BY datum");
@@ -30,7 +74,6 @@ class DB_storage
         }
         return $concerts;
     }
-
     public function createPost(string $date, string $city, string $club): void
     {
         $concert = new Concert($date, $city, $club);

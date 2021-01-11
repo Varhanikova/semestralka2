@@ -3,6 +3,8 @@ body {
     background-color: black;
 }
 
+
+
 .notif {
     text-align: center;
     top: -140vw;
@@ -14,7 +16,11 @@ body {
     top: 55vw;
     width: 100%;
 }
-
+.notif2 {
+    text-align: center;
+    top: 1vw;
+    width: 100%;
+}
 .addConcert {
     margin-top: 20vw;
 
@@ -308,6 +314,7 @@ i.fas.fa-edit {
 }
 
 @media screen and (min-width: 479px) {
+
     .kalendare a {
         margin-left: 60vh;
         position: relative;
@@ -379,6 +386,7 @@ i.fas.fa-edit {
 }
 
 @media only screen and (min-width: 768px) {
+
     .notif {
         top: -41vw;
     }
