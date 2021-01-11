@@ -20,17 +20,23 @@ class DB_storage
 
     }
 public function controlPass($name,$pass): bool {
+        $pom = '';
     $stmt = $this->pdo->query("SELECT heslo FROM prihlasenie WHERE name='$name'");
-    if($stmt->fetch()['heslo'] == $pass) {
+    while ($row = $stmt->fetch()) {
+        $pom = $row['heslo'];
+    }
+    if($pom == $pass) {
         return true;
     } else {return false;}
 }
     public function control($name,$pass): int {
-
-       // $login = new Login('0', '0');
+$pom = '';
+       // $login = new Login('', '');
         $stmt = $this->pdo->query("SELECT * FROM prihlasenie WHERE name='$name'");
-
-        if($stmt->fetch()['name']==$name) {
+        while ($row = $stmt->fetch()) {
+            $pom = $row['name'];
+        }
+        if($pom==$name) {
             if($this->controlPass($name,$pass)) {
                 return 0;
             } else {
@@ -103,7 +109,8 @@ public function controlPass($name,$pass): bool {
     public function getOne(string $datum): Concert
     {
         $concert = new Concert('date', 'city', 'club');
-        $stmt = $this->pdo->query("SELECT * FROM concerts WHERE datum='$datum'");
+        $stmt = $this->pdo->prepare("SELECT * FROM concerts WHERE datum=?");
+        $stmt->execute([$datum]);
         $row = $stmt->fetch();
         $concert->setDate($row['datum']);
         $concert->setCity($row['city']);
@@ -114,7 +121,10 @@ public function controlPass($name,$pass): bool {
     public function isThere(string $datumik) {
         $pom ='';
         $stmt = $this->pdo->query("SELECT * FROM concerts WHERE datum='$datumik'");
-        $pom = $stmt->fetch()['datum'];
+        while ($row = $stmt->fetch()) {
+            $pom = $row['datum'];
+        }
+
         return $pom;
     }
 }

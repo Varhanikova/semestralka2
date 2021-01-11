@@ -18,7 +18,7 @@ if (isset($_POST['Send1'])) {
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
         $storage->createPost($a, $b, $c);
-        header("Location: Concerts.php?#top");
+        header("Location: #top");
     }
 }
 if (isset($_POST['Send2'])) {
@@ -49,7 +49,6 @@ $concerts = $storage->getAll();
             </a><br>
         </div>
       <?php } ?>
-
         <h2>Upcoming concerts:</h2>
     </div>
 </div>
@@ -107,7 +106,9 @@ if (isset($_POST['Send1'])) {
         <div class="notif alert alert-primary" role="alert">
             Wrong date!
         </div>
-    <?php } if ($storage->isThere($_POST['date']) != '') { ?>
+    <?php } if ($storage->isThere($_POST['date']) != '' ) {
+
+        ?>
         <div class="notif alert alert-primary" role="alert">
             You can't use this date
         </div>

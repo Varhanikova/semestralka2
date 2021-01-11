@@ -94,15 +94,15 @@ if (isset($_POST['Send'])) {
     if ($_POST['username'] == '' || $_POST['psw'] == '') {
         ?>
         <div class="notif3 alert alert-primary" role="alert">
-            Something is missing there..
+            Niečo si nedoplnil !
         </div>
     <?php }  if ($storage->control($_POST['username'],$_POST['psw'])==1) { ?>
         <div class="notif3 alert alert-primary" role="alert">
-            zlé username
+            zlé meno !
         </div>
     <?php }if ($storage->control($_POST['username'],$_POST['psw'])==2) { ?>
         <div class="notif3 alert alert-primary" role="alert">
-            zlé heslo!
+            zlé heslo !
         </div>
     <?php }
 }
