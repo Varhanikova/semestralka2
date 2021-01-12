@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-
+require "albumy.php";
 $storage3 = new DB_storage();
 $song = new Song('','','');
 $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
@@ -8,18 +8,7 @@ $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".bla").hide();
-        });
-    </script>
-    <script>
-        function funkcia(pam) {
-                    let s = "#"+pam;
-                    $(s).toggle();
-        }
-    </script>
+
 </head>
 <body>
 <img class="album1" src="gonein.jpg" alt="album">
