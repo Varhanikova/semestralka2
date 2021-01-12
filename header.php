@@ -3,12 +3,18 @@ require_once "DB_storage.php";
 require_once "Login.php";
 
 $storage = new DB_storage();
+
 session_start();
 
 if (isset($_POST['Send'])) {
 
     if ($_POST['username']!= '' && $_POST['psw']!='' &&$storage->control($_POST['username'],$_POST['psw'])==0) {
       $_SESSION["name"] = $_POST['username'];
+    }
+}
+if(isset($_POST['reg'])) {
+    if($storage->saveLogin($_POST['username'],$_POST['psw1'])==true) {
+
     }
 }
 if(isset($_POST['logout'])) {
@@ -32,6 +38,16 @@ if(isset($_POST['logout'])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/e7858c52b6.js" crossorigin="anonymous"></script>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -64,7 +80,8 @@ if(isset($_POST['logout'])) {
                 </li>
             </ul>
             <?php
-            if (isset($_SESSION["name"])) { ?>
+            if (isset($_SESSION["name"])) {
+                ?>
                 <div class="topnav">
                     <div class="login-container">
                         <form method="post">
@@ -73,15 +90,33 @@ if(isset($_POST['logout'])) {
                     </div>
                 </div>
          <?php   } else { ?>
+                <button class="open-button" onclick="openForm()">Registration</button>
+                <div class="form-popup" id="myForm">
+                    <form method="post" class="form-container">
+                        <h1>Registration</h1>
 
+                        <label for="email"><b>Username</b></label>
+                        <input type="text" placeholder="Enter username" name="username" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw1" required>
+
+                        <button type="submit" name="reg" class="btn">Login</button>
+                        <button type="submit" class="btn cancel"  onclick="closeForm()">Close</button>
+                    </form>
+                </div>
             <div class="topnav">
+
                 <div class="login-container">
                     <form method="post">
                         <input type="text" placeholder="Username" name="username">
                         <input type="password" placeholder="Password" name="psw">
                         <button type="submit" name="Send">Login</button>
+
+
                     </form>
                 </div>
+
             </div>
            <?php } ?>
 

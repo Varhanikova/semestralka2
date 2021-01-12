@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-
+require "albumy.php";
 $storage1 = new DB_storage();
 $song = new Song('','','');
 $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
@@ -8,7 +8,6 @@ $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 </head>
 <body>
 
@@ -17,21 +16,17 @@ $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
 <div class="songy ">
     <h2>Songs:</h2>
     <ul>
-        <?php foreach ($songs as $song) { ?>
-            <li><a href="#<?= $song->getName() ?>">1. <?= $song->getName() ?></a></li>
-        <?php } ?>
+        <?php foreach ($songs as $song) {
+            $a =0; ?>
+            <?php  $string = str_replace(' ', '', $song->getName()); ?>
+            <li><a id="togg"  onclick="funkcia('<?=$string?>')" ><?= $song->getName() ?></a></li>
+            <div id="<?= $string?>" class="bla">
+                <p id="p"><?=$song->getText()?></p>
+                <br><br>
+            </div>
+            <?php $a++;} ?>
     </ul>
 </div>
 
-<?php foreach ($songs as $song) { ?>
-    <div id="<?= $song->getName() ?>" class="bla">
-        <h1><?= $song->getName() ?></h1>
-        <h2>Lyrics:</h2>
-        <p> <?= $song->getText() ?>
-        </p>
-        <a href="#top" class="toop"> Back to top<br></a>
-        <br><br>
-    </div>
-<?php } ?>
 </body>
 </html>

@@ -25,7 +25,8 @@ public function controlPass($name,$pass): bool {
     while ($row = $stmt->fetch()) {
         $pom = $row['heslo'];
     }
-    if($pom == $pass) {
+    $h = md5($pass);
+    if($pom == $h) {
         return true;
     } else {return false;}
 }
@@ -45,7 +46,16 @@ $pom = '';
         } else {
             return 1;
         }
-
+}
+public function saveLogin($name, $heslo): bool{
+        $log = new Login($name,$heslo);
+        if($this->control($name,$heslo)==1) {
+            $stmt = $this->pdo->prepare("INSERT INTO prihlasenie(name,heslo) VALUES(?,?)");
+            $stmt->execute([$log->getMeno(), $log->getHeslo()]);
+            return true;
+        } else {
+            return false;
+        }
 
 }
     public function createSong(string $name, string $text, string $album){
@@ -68,6 +78,16 @@ $pom = '';
             $songs[] = $song;
         }
         return $songs;
+    }
+    public function textSongu(string $song): string {
+        $stmt = $this->pdo->prepare("SELECT text FROM songs WHERE nazov=?");
+        $stmt->execute([$song]);
+        $text='';
+        while ($row = $stmt->fetch()) {
+
+            $text = $row['text'];
+        }
+        return $text;
     }
     public function getAll(): array
     {

@@ -8,7 +8,8 @@ private string $heslo;
  public function __construct($meno,$heslo)
  {
      $this->meno=$meno;
-     $this->heslo=$heslo;
+     $hash = md5($heslo);
+     $this->heslo=$hash;
  }
 
     /**

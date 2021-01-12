@@ -33,6 +33,7 @@ if (isset($_POST['Send2'])) {
 $concerts = $storage->getAll();
 
 ?>
+<html>
 
 <div class="napisok col-sm-11">
     <div id="top">
@@ -42,13 +43,14 @@ $concerts = $storage->getAll();
             Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in <?= $concerts[1]->getCity() ?>.
             See all your opportunities to see them live below!</p>
         <br><br>
-        <?php   if (isset($_SESSION["name"])) {?>
+        <?php   if (isset($_SESSION["name"])) {
+            if($_SESSION["name"]=='admin') {?>
         <div class="buttony">
             <a href="?c=add#Add">
                 <button> Add new concert</button>
             </a><br>
         </div>
-      <?php } ?>
+      <?php }} ?>
         <h2>Upcoming concerts:</h2>
     </div>
 </div>
@@ -63,7 +65,8 @@ $concerts = $storage->getAll();
         <p><?= $conc->getDate() ?></p>
         <h1><?= $conc->getCity() ?></h1>
         <h2><?= $conc->getClub() ?></h2>
-        <?php    if (isset($_SESSION["name"])) {?>
+        <?php    if (isset($_SESSION["name"])){
+        if($_SESSION["name"]=='admin') {?>
         <a href="<?= "?a=delete" . "&date=" . $conc->getDate() ?>">
             <button type="button">X</button>
         </a>
@@ -72,7 +75,7 @@ $concerts = $storage->getAll();
                 <i class="fas fa-edit"></i>
             </a>
         </div>
-        <?php } ?>
+        <?php }} ?>
     </div>
 <?php } ?>
 <a href="#top" class="toop3">
@@ -87,13 +90,14 @@ $concerts = $storage->getAll();
             <label> Date: </label>
             <input type="date" name="date">
             <label> City, Country: </label>
-            <input type="text" name="city">
+            <input type="text" name="city" >
             <label>Club: </label>
-            <input type="text" name="club">
+            <input type="text" name="club" >
             <input type="submit" name="Send1" value="Send">
         </form>
     </div>
 </div>
+
 <?php } ?>
 <?php
 if (isset($_POST['Send1'])) {

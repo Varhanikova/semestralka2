@@ -3,7 +3,84 @@ body {
     background-color: black;
 }
 
+{box-sizing: border-box;}
 
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: white;
+    color: black;
+    padding: 1px 6px;
+    border-radius: 0;
+    cursor: pointer;
+    opacity: 0.8;
+    margin: 0;
+    right: 0;
+    position: relative;
+    bottom:0;
+
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: relative;
+    top: 10vh;
+    right: 0;
+    z-index: 9;
+}
+.form-popup h1 {
+    color: white;
+    font-size: 3vh;
+}
+.form-popup b {
+    color: white;
+    font-size: 2vh;
+}
+/* Add styles to the form container */
+.form-container {
+    max-width: 100%;
+    padding: 2px;
+    background-color: black;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 8px;
+    margin: 1px 0 15px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px 19px;
+    border: none;
+    margin-right: 6vw;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    margin-left: 6vw;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: darkred;
+    position: absolute;
+    right: 0;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
 
 .notif {
     text-align: center;
@@ -61,19 +138,6 @@ body {
     width: 45vw;
     margin-left: 8vw;
 }
-
-.fotka:hover {
-    opacity: 0.7;
-}
-
-.fotka2:hover {
-    opacity: 0.7;
-}
-
-.fotka3:hover {
-    opacity: 0.7;
-}
-
 .napis {
     position: relative;
     color: white;
@@ -314,6 +378,10 @@ i.fas.fa-edit {
 }
 
 @media screen and (min-width: 479px) {
+    .form-container .btn {
+        margin-right: 18vw;
+        margin-left: 10vw;
+    }
 
     .kalendare a {
         margin-left: 60vh;
@@ -321,6 +389,17 @@ i.fas.fa-edit {
         top: -6vh;
         font-size: 1.5vh;
 
+    }
+    .form-popup h1 {
+        color: white;
+        font-size: 4vh;
+    }
+    .form-popup b {
+        color: white;
+        font-size: 2vh;
+    }
+    .form-container{
+        max-width: 100%;
     }
 
     .toop3 button {
@@ -386,6 +465,35 @@ i.fas.fa-edit {
 }
 
 @media only screen and (min-width: 768px) {
+    .form-container .btn {
+
+        margin-right: 3vh;
+
+
+        margin-left: 3vh;
+    }
+    .form-popup h1 {
+        color: white;
+        font-size: 5vh;
+    }
+    .form-popup b {
+        color: white;
+        font-size: 2.5vh;
+    }
+    .form-popup {
+        display: none;
+        position: fixed;
+        top: 10vh;
+        right: 0;
+        z-index: 9;
+    }
+    .form-container{
+        max-width: 250px;
+    }
+    .open-button {
+        margin: 5px;
+        left: -5px;
+    }
 
     .notif {
         top: -41vw;
