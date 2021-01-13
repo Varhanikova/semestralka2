@@ -47,7 +47,6 @@ if(isset($_POST['logout'])) {
             document.getElementById("myForm").style.display = "none";
         }
     </script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -59,14 +58,14 @@ if(isset($_POST['logout'])) {
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExample06">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+            <ul class="navbar-nav mr-auto" id="idecko">
+                <li class="nav-item">
                     <a class="nav-link" href="index.php">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Bio.php">Bio</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="Concerts.php">Concerts</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -90,7 +89,17 @@ if(isset($_POST['logout'])) {
                     </div>
                 </div>
          <?php   } else { ?>
-                <button id="registr" class="fas fa-registered" class="open-button" onclick="openForm()"></button>
+
+            <div class="topnav">
+
+                <div class="login-container">
+                    <form method="post">
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="password" placeholder="Password" name="psw">
+                        <button type="submit" name="Send" class="fas fa-sign-in-alt" id="login" ></button>
+                    </form>
+                </div>
+                <a class="open-button" onclick="openForm()">Click here for registration! </a>
                 <div class="form-popup" id="myForm">
                     <form method="post" class="form-container">
                         <h1>Registration</h1>
@@ -104,19 +113,6 @@ if(isset($_POST['logout'])) {
                         <button type="submit" class="btn cancel"  onclick="closeForm()">Close</button>
                     </form>
                 </div>
-            <div class="topnav">
-
-                <div class="login-container">
-                    <form method="post">
-                        <input type="text" placeholder="Username" name="username">
-                        <input type="password" placeholder="Password" name="psw">
-                        <button type="submit" name="Send" class="fas fa-sign-in-alt" id="login" ></button>
-
-
-
-                    </form>
-                </div>
-
             </div>
            <?php } ?>
 

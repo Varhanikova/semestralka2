@@ -2,6 +2,7 @@
 body {
     background-color: black;
 }
+
 button#registr {
     height: 31px;
     width: 35px;
@@ -26,8 +27,8 @@ button#registr {
 }
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-    background-color: white;
-    color: black;
+
+    color: white;
     padding: 1px 6px;
     border-radius: 0;
     cursor: pointer;
@@ -534,6 +535,15 @@ i.fas.fa-edit {
     .open-button {
         margin: 5px;
         left: -5px;
+        color: white;
+        padding: 1px 6px;
+        border-radius: 0;
+        cursor: pointer;
+        opacity: 0.8;
+        margin: 0;
+        right: -3px;
+        position: relative;
+        bottom: 0;
     }
 
     .notif {
@@ -578,7 +588,7 @@ i.fas.fa-edit {
     .fotka {
         margin-left: 63vw;
         width: 20vw;
-        top: -29vw;
+        top: -28vw;
     }
 
     .fotka2 {
