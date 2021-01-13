@@ -2,9 +2,28 @@
 body {
     background-color: black;
 }
-
+button#registr {
+    height: 31px;
+    width: 35px;
+    margin-right: 20px;
+}
 {box-sizing: border-box;}
 #konc{color: white;}
+#login{color: black;
+    height: 30px;
+    width: 40px;
+}
+#prev {
+    margin-left: 11vw;
+    position: relative;
+    width: 12vw;
+    font-size: 2vw;
+}
+#next {
+    position: relative;
+    width: 9vw;
+    font-size: 2vw;
+}
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
     background-color: white;
@@ -310,12 +329,18 @@ p {
 .kalendarik1 svg {
     width: 10vw;
     height: 10vw;
-    margin-left: 7vw;
+
     margin-top: 5vw;
+
+
 }
 
 .kalendare svg {
     margin-top: 5vw;
+    width: 10vw;
+    height: 10vw;
+    margin-top: 4vw;
+    margin-left: 7.5vw;
 }
 
 .kalendare h1 {
@@ -377,6 +402,23 @@ i.fas.fa-edit {
 }
 
 @media screen and (min-width: 479px) {
+
+    #prev {
+        position: absolute;
+        left: 20vh;
+        top: 133vh;
+        width: 12vh;
+        font-size: 2.5vh;
+        margin-left: 0;
+    }
+    #next {
+        top: 133vh;
+        position: absolute;
+        left: 35vh;
+        width: 12vh;
+        font-size: 2.5vh;
+        margin-left: 0;
+    }
     .form-container .btn {
         margin-right: 18vw;
         margin-left: 10vw;

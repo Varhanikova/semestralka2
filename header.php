@@ -38,7 +38,7 @@ if(isset($_POST['logout'])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/e7858c52b6.js" crossorigin="anonymous"></script>
-
+<script src="https://kit.fontawesome.com/e060c06e60.js" crossorigin="anonymous"></script>
     <script>
         function openForm() {
             document.getElementById("myForm").style.display = "block";
@@ -90,7 +90,7 @@ if(isset($_POST['logout'])) {
                     </div>
                 </div>
          <?php   } else { ?>
-                <button class="open-button" onclick="openForm()">Registration</button>
+                <button id="registr" class="fas fa-registered" class="open-button" onclick="openForm()"></button>
                 <div class="form-popup" id="myForm">
                     <form method="post" class="form-container">
                         <h1>Registration</h1>
@@ -100,7 +100,6 @@ if(isset($_POST['logout'])) {
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw1" required>
-
                         <button type="submit" name="reg" class="btn">Register</button>
                         <button type="submit" class="btn cancel"  onclick="closeForm()">Close</button>
                     </form>
@@ -111,7 +110,8 @@ if(isset($_POST['logout'])) {
                     <form method="post">
                         <input type="text" placeholder="Username" name="username">
                         <input type="password" placeholder="Password" name="psw">
-                        <button type="submit" name="Send">Login</button>
+                        <button type="submit" name="Send" class="fas fa-sign-in-alt" id="login" ></button>
+
 
 
                     </form>
