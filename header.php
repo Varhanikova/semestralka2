@@ -101,7 +101,7 @@ if(isset($_POST['logout'])) {
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw1" required>
 
-                        <button type="submit" name="reg" class="btn">Login</button>
+                        <button type="submit" name="reg" class="btn">Register</button>
                         <button type="submit" class="btn cancel"  onclick="closeForm()">Close</button>
                     </form>
                 </div>

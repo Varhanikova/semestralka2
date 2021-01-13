@@ -89,6 +89,7 @@ public function saveLogin($name, $heslo): bool{
         return $text;
     }
     public  function dajAlbum($i): string {
+        $album='';
         $stmt = $this->pdo->query("SELECT DISTINCT album as album FROM songs where rok_vydania='$i'");
         while ($row = $stmt->fetch()) {
             $album = $row['album'];

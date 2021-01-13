@@ -4,7 +4,7 @@ body {
 }
 
 {box-sizing: border-box;}
-#showAlbum{color: white;}
+#konc{color: white;}
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
     background-color: white;
@@ -257,7 +257,6 @@ p {
 
 .kalendarikk {
     color: white;
-
 }
 
 .kalendare {

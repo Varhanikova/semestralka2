@@ -55,33 +55,47 @@ $concerts = $storage->getAll();
     </div>
 </div>
 
-<?php foreach ($concerts as $conc) { ?>
-    <div class="kalendare">
-        <div class="kalendarik1">
-            <svg viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
-            </svg>
-        </div>
-        <p><?= $conc->getDate() ?></p>
-        <h1><?= $conc->getCity() ?></h1>
-        <h2><?= $conc->getClub() ?></h2>
-        <?php    if (isset($_SESSION["name"])){
-            if($_SESSION["name"]=='admin') {?>
-                <a href="<?= "?a=delete" . "&date=" . $conc->getDate() ?>">
-                    <button type="button">X</button>
-                </a>
-                <div class="editko">
-                    <a href="<?= "?b=edit" . "&date2=" . $conc->getDate() . "#Edit" ?> ">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </div>
-            <?php }} ?>
-    </div>
-<?php } ?>
 
-<a href="#top" class="toop3">
-    <button>Back to the top ↑</button>
-</a>
+    <div class="kalendare" id="kalendarik">
+        <div id="kalendarik1" class="kalendarik1">
+        </div>
+
+    </div>
+
+<br>
+<input id="prev" onclick="previous()" type="button" value="Previous" />
+<input id="next" onclick="next()" type="button" value="Next" />
+
+
+<script>
+    var i = 1;
+    var size = parseInt('<?= sizeof($concerts) ?>');
+    displayResults(i);
+    function displayResults(i) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("kalendarik").innerHTML = this.responseText;
+            }
+        };
+        var a = i.toString();
+        xhttp.open("GET", "koncerty.php?q="+ a, true);
+        xhttp.send();
+    }
+    function next() {
+        if (i < size-4 ){
+            i+=5;
+            displayResults(i);
+        }
+    }
+    function previous() {
+        if (i > 1) {
+            i-=5;
+            displayResults(i);
+        }}
+</script>
+
 <div id="Add" class="DBConcerts">
     <?php
     if (isset($_GET['c']) == 'add') { ?>

@@ -5,11 +5,11 @@ require "header.php";
 <html lang="en">
 <head>
     <script>
-        function opacity() {
-            document.getElementById("myPic").style.opacity = "0.7";
+        function opacity(str) {
+            document.getElementById(str).style.opacity = "0.7";
         }
-        function opacityGone() {
-            document.getElementById("myPic").style.opacity = "1";
+        function opacityGone(str) {
+            document.getElementById(str).style.opacity = "1";
         }
 
     </script>
@@ -21,13 +21,13 @@ require "header.php";
 <img class=" fotka1 center" src="nazov.png" alt="nazov kapely">
 <div class="fotky">
     <a href="LoveYouLetTooClose.php">
-        <img id="myPic" class="fotka col-sm-6" onmousemove="opacity()" onmouseleave="opacityGone()" src="loveyoulettooclose.jpg" alt="album">
+        <img id="myPic1" class="fotka col-sm-6" onmousemove="opacity('myPic1')" onmouseleave="opacityGone('myPic1')" src="loveyoulettooclose.jpg" alt="album">
     </a>
     <a href="GoneInYourWake.php">
-        <img id="myPic" class="fotka2 col-sm-6" onmousemove="opacity()" onmouseleave="opacityGone()" src="gonein.jpg" alt="album">
+        <img id="myPic2" class="fotka2 col-sm-6" onmousemove="opacity('myPic2')" onmouseleave="opacityGone('myPic2')" src="gonein.jpg" alt="album">
     </a>
     <a href="LetGoOfYourLove.php">
-        <img id="myPic"  class="fotka3 col-sm-6 " onmousemove="opacity()" onmouseleave="opacityGone()" src="letGoOfYourLove.jpg" alt="album">
+        <img id="myPic3"  class="fotka3 col-sm-6 " onmousemove="opacity('myPic3')" onmouseleave="opacityGone('myPic3')" src="letGoOfYourLove.jpg" alt="album">
     </a>
 </div>
 </body>

@@ -29,42 +29,31 @@ $st = new DB_storage();
     <p> Clik here to see more albums</p>
     <script>
             var i = 0;
-            displayAl(i,'2017');
-            function displayAl(i,str) {
-
+            displayAl(i);
+            function displayAl(i) {
                 var xhttp = new XMLHttpRequest();
-                if(i===0) {let str = '2017';} else if(i===1){let str = '2019';} else {let str = '2020';}
 
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("showAlbum").innerHTML = this.responseText;
                     }
                 };
-
-                xhttp.open("GET", "dajAlbum.php?q="+ str, true);
+                var a = i.toString();
+                xhttp.open("GET", "dajAlbum.php?q="+ a, true);
                 xhttp.send();
             }
             function next() {
                 if (i < 2) {
                     i++;
-                    if(i===2){
-                        displayAl(i,'2020');
-                    } else {
-                        displayAl(i, '2019');
-                    }
+                        displayAl(i);
                 }
             }
             function previous() {
                 if (i > 0) {
                     i--;
-                    if(i===1){
-                        displayAl(i,'2019');
-                    } else {displayAl(i,'2017');}
-                }
-            }
+                    displayAl(i);
+            }}
     </script>
-
-
 </div>
 </body>
 </html>
