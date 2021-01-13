@@ -13,7 +13,7 @@ if (isset($_GET['b']) == 'edit') {
     $concert = $storage->getOne($date1);
 }
 if (isset($_POST['Send1'])) {
-    if (($_POST['date']!= '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '') {
+    if (($_POST['date']!= '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '' ) {
         $a = htmlspecialchars($_POST['date']);
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
@@ -54,18 +54,14 @@ $concerts = $storage->getAll();
         <h2>Upcoming concerts:</h2>
     </div>
 </div>
-
-
     <div class="kalendare" id="kalendarik">
         <div id="kalendarik1" class="kalendarik1">
         </div>
 
     </div>
-
 <br>
 <input id="prev" onclick="previous()" type="button" value="Previous" />
 <input id="next" onclick="next()" type="button" value="Next" />
-
 
 <script>
     var i = 1;
@@ -98,30 +94,26 @@ $concerts = $storage->getAll();
 
 <div id="Add" class="DBConcerts">
     <?php
-    if (isset($_GET['c']) == 'add') { ?>
+    if (isset($_GET['c']) == 'add' && isset($_SESSION["name"]) ) { ?>
     <div class="addConcert">
         <label>Add new concert: </label>
         <form method="post">
             <label> Date: </label>
-            <input type="date" name="date">
+            <input type="date" name="date" id="date">
             <label> City, Country: </label>
-            <input type="text" name="city" >
+            <input type="text" name="city" id="city">
             <label>Club: </label>
-            <input type="text" name="club" >
-            <input type="submit" name="Send1" value="Send">
+            <input type="text" name="club" id="club">
+            <input onclick="kontrola()" type="submit" name="Send1" value="Send">
         </form>
     </div>
 </div>
 
 <?php } ?>
+
 <?php
 if (isset($_POST['Send1'])) {
-    if (($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '')) {
-        ?>
-        <div class="notif alert alert-primary" role="alert">
-            Something is missing there..
-        </div>
-    <?php } if ($_POST['date'] < date("Y-m-d")) { ?>
+    if ($_POST['date'] < date("Y-m-d")) { ?>
         <div class="notif alert alert-primary" role="alert">
             Wrong date!
         </div>
@@ -132,6 +124,11 @@ if (isset($_POST['Send1'])) {
             You can't use this date
         </div>
     <?php }
+    if($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '') { ?>
+        <div class="notif alert alert-primary" role="alert">
+            Empty!
+        </div>
+   <?php }
 }
 if (isset($_POST['Send2'])) {
     if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '') {

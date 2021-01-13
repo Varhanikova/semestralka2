@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="ikonky, css úpravy">
+    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="drobnosti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Concerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Concerts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -97,7 +98,7 @@
       <workItem from="1609857858533" duration="24000" />
       <workItem from="1610365217503" duration="25162000" />
       <workItem from="1610450660425" duration="36014000" />
-      <workItem from="1610527019924" duration="22408000" />
+      <workItem from="1610527019924" duration="27244000" />
     </task>
     <task id="LOCAL-00001" summary="funguje mi php zatiaľ">
       <created>1605125382434</created>
@@ -267,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610561315859</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="drobnosti">
+      <created>1610570983620</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610570983620</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +317,8 @@
     <MESSAGE value="ajax v Bio.php, posúvanie albumov" />
     <MESSAGE value="výpis concertov po 5" />
     <MESSAGE value="ikonky, css úpravy" />
-    <option name="LAST_COMMIT_MESSAGE" value="ikonky, css úpravy" />
+    <MESSAGE value="drobnosti" />
+    <option name="LAST_COMMIT_MESSAGE" value="drobnosti" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605124124540">
@@ -340,10 +349,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605736609800" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610561318125">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610570990226">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610561318125" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610570990226" />
     <state x="668" y="289" width="422" height="297" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605124150573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -47,6 +47,7 @@ if(isset($_POST['logout'])) {
             document.getElementById("myForm").style.display = "none";
         }
     </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
