@@ -88,6 +88,13 @@ public function saveLogin($name, $heslo): bool{
         }
         return $text;
     }
+    public  function dajAlbum($i): string {
+        $stmt = $this->pdo->query("SELECT DISTINCT album as album FROM songs where rok_vydania='$i'");
+        while ($row = $stmt->fetch()) {
+            $album = $row['album'];
+        }
+        return $album;
+    }
     public function kolko(): string{
         $stmt = $this->pdo->query("SELECT COUNT(DISTINCT (city)) as pocet FROM concerts");
         while ($row = $stmt->fetch()) {

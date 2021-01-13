@@ -19,15 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="toggle v albumoch, md5, registrácia">
-      <change afterPath="$PROJECT_DIR$/dajLyrics.php" afterDir="false" />
+    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="ajax">
+      <change afterPath="$PROJECT_DIR$/dajAlbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/515b3956-19b1-41fb-8873-0bfbe8df1d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/515b3956-19b1-41fb-8873-0bfbe8df1d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Concerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Concerts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Bio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB_storage.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB_storage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoneInYourWake.php" beforeDir="false" afterPath="$PROJECT_DIR$/GoneInYourWake.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LetGoOfYourLove.php" beforeDir="false" afterPath="$PROJECT_DIR$/LetGoOfYourLove.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoveYouLetTooClose.php" beforeDir="false" afterPath="$PROJECT_DIR$/LoveYouLetTooClose.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albumy.php" beforeDir="false" afterPath="$PROJECT_DIR$/albumy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,8 @@
       <workItem from="1608196372204" duration="35000" />
       <workItem from="1609857858533" duration="24000" />
       <workItem from="1610365217503" duration="25162000" />
-      <workItem from="1610450660425" duration="35759000" />
+      <workItem from="1610450660425" duration="36014000" />
+      <workItem from="1610527019924" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="funguje mi php zatiaľ">
       <created>1605125382434</created>
@@ -243,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610483282095</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ajax">
+      <created>1610497752180</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1610497752180</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +287,8 @@
     <MESSAGE value="tri DB entity, admin prihlásenie, odstránená duplicita navbaru" />
     <MESSAGE value="oprava v DB, pri zisťovaní či už sa nachádza v tabuľke" />
     <MESSAGE value="toggle v albumoch, md5, registrácia" />
-    <option name="LAST_COMMIT_MESSAGE" value="toggle v albumoch, md5, registrácia" />
+    <MESSAGE value="ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajax" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605124124540">
@@ -304,18 +311,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1610372536136" />
-    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1610493334710">
+    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1610527359949">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1610493334710" />
+    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1610527359949" />
     <state x="499" y="114" key="RollbackChangesDialog" timestamp="1605736609800">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605736609800" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610483285561">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610497759779">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610483285561" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610497759779" />
     <state x="668" y="289" width="422" height="297" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605124150573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -332,10 +339,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="232" width="403" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1610366896839" />
-    <state x="89" y="226" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610455158650">
+    <state x="89" y="226" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610527135471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="89" y="226" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1610455158650" />
+    <state x="89" y="226" width="1264" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1610527135471" />
     <state x="611" y="260" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1605123837587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
