@@ -84,10 +84,17 @@ public function saveLogin($name, $heslo): bool{
         $stmt->execute([$song]);
         $text='';
         while ($row = $stmt->fetch()) {
-
             $text = $row['text'];
         }
         return $text;
+    }
+    public function kolko(): string{
+        $stmt = $this->pdo->query("SELECT COUNT(DISTINCT (city)) as pocet FROM concerts");
+        while ($row = $stmt->fetch()) {
+          $pocet = $row['pocet'];
+        }
+
+        return $pocet;
     }
     public function getAll(): array
     {

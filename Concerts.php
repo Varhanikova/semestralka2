@@ -18,7 +18,7 @@ if (isset($_POST['Send1'])) {
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
         $storage->createPost($a, $b, $c);
-        header("Location: #top");
+        header("Location: Concerts.php?#top");
     }
 }
 if (isset($_POST['Send2'])) {
@@ -39,18 +39,18 @@ $concerts = $storage->getAll();
     <div id="top">
         <h1>Thousand Below tour dates 2021</h1>
         <br>
-        <p>Thousand Below is currently touring across 9 countries and has <?= sizeof($concerts) ?> upcoming concerts.
+        <p>Thousand Below is currently touring across <?= $storage->kolko() ?> cities and has <?= sizeof($concerts) ?> upcoming concerts.
             Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in <?= $concerts[1]->getCity() ?>.
             See all your opportunities to see them live below!</p>
         <br><br>
         <?php   if (isset($_SESSION["name"])) {
             if($_SESSION["name"]=='admin') {?>
-        <div class="buttony">
-            <a href="?c=add#Add">
-                <button> Add new concert</button>
-            </a><br>
-        </div>
-      <?php }} ?>
+                <div class="buttony">
+                    <a href="?c=add#Add">
+                        <button> Add new concert</button>
+                    </a><br>
+                </div>
+            <?php }} ?>
         <h2>Upcoming concerts:</h2>
     </div>
 </div>
@@ -66,18 +66,19 @@ $concerts = $storage->getAll();
         <h1><?= $conc->getCity() ?></h1>
         <h2><?= $conc->getClub() ?></h2>
         <?php    if (isset($_SESSION["name"])){
-        if($_SESSION["name"]=='admin') {?>
-        <a href="<?= "?a=delete" . "&date=" . $conc->getDate() ?>">
-            <button type="button">X</button>
-        </a>
-        <div class="editko">
-            <a href="<?= "?b=edit" . "&date2=" . $conc->getDate() . "#Edit" ?> ">
-                <i class="fas fa-edit"></i>
-            </a>
-        </div>
-        <?php }} ?>
+            if($_SESSION["name"]=='admin') {?>
+                <a href="<?= "?a=delete" . "&date=" . $conc->getDate() ?>">
+                    <button type="button">X</button>
+                </a>
+                <div class="editko">
+                    <a href="<?= "?b=edit" . "&date2=" . $conc->getDate() . "#Edit" ?> ">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            <?php }} ?>
     </div>
 <?php } ?>
+
 <a href="#top" class="toop3">
     <button>Back to the top ↑</button>
 </a>

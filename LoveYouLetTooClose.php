@@ -19,14 +19,11 @@ $songs = $storage2->vsetkyZAlbumu('Love You Let Too Close');
     <h2>Songs:</h2>
     <ul>
         <?php foreach ($songs as $song) {
-            $a =0; ?>
+            ?>
             <?php  $string = str_replace(' ', '', $song->getName()); ?>
-            <li><a id="togg"  onclick="funkcia('<?=$string?>')" ><?= $song->getName() ?></a></li>
-            <div id="<?= $string?>" class="bla">
-                <p id="p"><?=$song->getText()?></p>
-                <br><br>
-            </div>
-            <?php $a++;} ?>
+            <li><a id="togg"  onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
+            <div id="<?= $string?>" class="bla"></div>
+            <?php } ?>
     </ul>
 </div>
 

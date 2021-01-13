@@ -3,15 +3,27 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
-        $(document).ready(function(){
-            $(".bla").hide();
-        });
-    </script>
-    <script>
-        function funkcia(pam) {
-            let s = "#"+pam;
-            $(s).toggle();
-        }
+
+        function showSong(str,id) {
+
+            var xhttp;
+if(document.getElementById(id).textContent == "") {
+                if (str == "") {
+                    document.getElementById(id).innerHTML = "";
+                    return;
+                }
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById(id).innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "dajLyrics.php?q="+str, true);
+                xhttp.send();
+          } else {
+    document.getElementById(id).innerHTML = "";
+    }}
     </script>
 </head>
