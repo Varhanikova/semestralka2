@@ -10,7 +10,6 @@ $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
 <head>
 </head>
 <body>
-
 <img class="album1" src="pics/letGoOfYourLove.jpg" alt="album">
 
 <div class="songy ">

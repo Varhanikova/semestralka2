@@ -4,7 +4,9 @@ $st = new DB_storage();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <script>
+        document.getElementById("bio").className += " active";
+    </script>
 </head>
 <body>
 <img class="fotka5" src="pics/boys.jpg" alt="chalosi">

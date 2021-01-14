@@ -13,9 +13,12 @@ require "header.php";
         }
 
     </script>
+
 </head>
 <body>
-
+<script>
+    document.getElementById("index").className += " active";
+</script>
 
 <h1 class="napis">Welcome to my fanpage of</h1>
 <img class=" fotka1 center" src="pics/nazov.png" alt="nazov kapely">

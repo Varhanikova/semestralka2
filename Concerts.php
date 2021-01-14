@@ -34,7 +34,10 @@ $concerts = $storage->getAll();
 
 ?>
 <html>
+<script>
 
+    document.getElementById("concerts").className += " active";
+</script>
 <div class="napisok col-sm-11">
     <div id="top">
         <h1>Thousand Below tour dates 2021</h1>
