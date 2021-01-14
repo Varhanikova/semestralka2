@@ -1,9 +1,9 @@
 <?php
 
 
-require "DB_storage.php";
+require "../DB_storage.php";
 $storage = new DB_storage();
-//$storage->dajAlbum($_GET['q']);
+
 
 if($_GET['q'] == '0'){
     $rok = '2017';
@@ -11,5 +11,5 @@ if($_GET['q'] == '0'){
     $rok = '2020';
 }
 echo "<p id='nazov'>" . "Album:  ".$storage->dajAlbum($rok) ."<br>".
-    " Rok vydania:  ". $rok. "</p>";
+    " Year of publication :  ". $rok. "</p>";
 ?>

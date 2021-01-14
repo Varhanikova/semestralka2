@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-require "albumy.php";
+require "Albums/albumy.php";
 $storage3 = new DB_storage();
 $song = new Song('','','');
 $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
@@ -11,16 +11,23 @@ $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
 
 </head>
 <body>
-<img class="album1" src="gonein.jpg" alt="album">
+<img class="album1" src="pics/gonein.jpg" alt="album">
 <div class="songy ">
     <h2>Songs:</h2>
     <ul>
         <?php foreach ($songs as $song) {
             ?>
-            <?php  $string = str_replace(' ', '', $song->getName()); ?>
-            <li><a id="togg"  onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
-        <div id="<?= $string?>" class="bla"></div>
-            <?php } ?>
+            <?php  $string = str_replace(' ', '', $song->getName());
+            if(isset($_SESSION["name"])) {
+                ?>
+                <li><a id="togg"  onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
+                <div id="<?= $string?>" class="bla"></div>
+            <?php } else { ?>
+                <li><a id="togg" ><?= $song->getName() ?></a></li>
+                <div id="<?= $string?>" class="bla"></div>
+
+            <?php }
+        }?>
     </ul>
 </div>
 

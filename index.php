@@ -18,16 +18,16 @@ require "header.php";
 
 
 <h1 class="napis">Welcome to my fanpage of</h1>
-<img class=" fotka1 center" src="nazov.png" alt="nazov kapely">
+<img class=" fotka1 center" src="pics/nazov.png" alt="nazov kapely">
 <div class="fotky">
     <a href="LoveYouLetTooClose.php">
-        <img id="myPic1" class="fotka col-sm-6" onmousemove="opacity('myPic1')" onmouseleave="opacityGone('myPic1')" src="loveyoulettooclose.jpg" alt="album">
+        <img id="myPic1" class="fotka col-sm-6" onmousemove="opacity('myPic1')" onmouseleave="opacityGone('myPic1')" src="pics/loveyoulettooclose.jpg" alt="album">
     </a>
     <a href="GoneInYourWake.php">
-        <img id="myPic2" class="fotka2 col-sm-6" onmousemove="opacity('myPic2')" onmouseleave="opacityGone('myPic2')" src="gonein.jpg" alt="album">
+        <img id="myPic2" class="fotka2 col-sm-6" onmousemove="opacity('myPic2')" onmouseleave="opacityGone('myPic2')" src="pics/gonein.jpg" alt="album">
     </a>
     <a href="LetGoOfYourLove.php">
-        <img id="myPic3"  class="fotka3 col-sm-6 " onmousemove="opacity('myPic3')" onmouseleave="opacityGone('myPic3')" src="letGoOfYourLove.jpg" alt="album">
+        <img id="myPic3" class="fotka3 col-sm-6 " onmousemove="opacity('myPic3')" onmouseleave="opacityGone('myPic3')" src="pics/letGoOfYourLove.jpg" alt="album">
     </a>
 </div>
 </body>

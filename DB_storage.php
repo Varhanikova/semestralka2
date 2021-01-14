@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-require_once "Concert.php";
-require_once "Song.php";
-require_once "Login.php";
+require_once "Concerts/Concert.php";
+require_once "Albums/Song.php";
+require_once "Login/Login.php";
 class DB_storage
 {
     private PDO $pdo;

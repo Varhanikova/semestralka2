@@ -73,10 +73,9 @@ $concerts = $storage->getAll();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("kalendarik").innerHTML = this.responseText;
-            }
-        };
+            }        };
         var a = i.toString();
-        xhttp.open("GET", "koncerty.php?q="+ a, true);
+        xhttp.open("GET", "Concerts/koncerty.php?q="+ a, true);
         xhttp.send();
     }
     function next() {

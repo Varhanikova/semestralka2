@@ -1,13 +1,12 @@
-<?php ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-
         function showSong(str,id) {
-
             var xhttp;
 if(document.getElementById(id).textContent == "") {
                 if (str == "") {
@@ -20,10 +19,15 @@ if(document.getElementById(id).textContent == "") {
                         document.getElementById(id).innerHTML = this.responseText;
                     }
                 };
-                xhttp.open("GET", "dajLyrics.php?q="+str, true);
+                xhttp.open("GET", "Albums/dajLyrics.php?q="+str, true);
                 xhttp.send();
           } else {
     document.getElementById(id).innerHTML = "";
     }}
     </script>
 </head>
+<body>
+
+
+
+</body>

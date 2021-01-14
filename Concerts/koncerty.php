@@ -1,5 +1,5 @@
 <?php
-require "DB_storage.php";
+require "../DB_storage.php";
 session_start();
 $storagee = new DB_storage();
 $concerts = $storagee->getAll();

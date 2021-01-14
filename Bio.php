@@ -7,7 +7,7 @@ $st = new DB_storage();
 
 </head>
 <body>
-<img class="fotka5" src="boys.jpg" alt="chalosi">
+<img class="fotka5" src="pics/boys.jpg" alt="chalosi">
 <div class="bioo ">
     <p> Thousand Below is an American post-hardcore band from Southern California, formed in 2016.
         They are currently signed to Rise Records.</p>
@@ -39,7 +39,7 @@ $st = new DB_storage();
                     }
                 };
                 var a = i.toString();
-                xhttp.open("GET", "dajAlbum.php?q="+ a, true);
+                xhttp.open("GET", "Albums/dajAlbum.php?q="+ a, true);
                 xhttp.send();
             }
             function next() {

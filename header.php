@@ -1,6 +1,6 @@
 <?php
 require_once "DB_storage.php";
-require_once "Login.php";
+require_once "Login/Login.php";
 
 $storage = new DB_storage();
 
@@ -48,12 +48,12 @@ if(isset($_POST['logout'])) {
         }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div id="top">
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-        <img class="logo" src="logo.png" alt="logo">
+        <img class="logo" src="pics/logo.png" alt="logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06"
                 aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
