@@ -2,6 +2,9 @@
 body {
     background-color: black;
 }
+div#Edit {
+    margin-top: 10vw;
+}
 p#moreAlbums {
     position: relative;
     left: 9vw;
@@ -13,6 +16,7 @@ p#nazov {
     margin-top: 2vw;
     color: cornsilk;
 }
+
 img.bioAlbums {
     width: 20vh;
     height: 19vh;
@@ -21,32 +25,42 @@ img.bioAlbums {
     opacity: 0.7;
     margin-bottom: 2vh;
 }
+
 input[type="button"] {
     position: relative;
     left: 22vw;
 }
+
 button#registr {
     height: 31px;
     width: 35px;
     margin-right: 20px;
 }
-{box-sizing: border-box;}
 
-#login{color: black;
+{
+    box-sizing: border-box
+;
+}
+
+#login {
+    color: black;
     height: 30px;
     width: 40px;
 }
+
 #prev {
     margin-left: 11vw;
     position: relative;
     width: 12vw;
     font-size: 2vw;
 }
+
 #next {
     position: relative;
     width: 9vw;
     font-size: 2vw;
 }
+
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
 
@@ -58,7 +72,7 @@ button#registr {
     margin: 0;
     right: 0;
     position: relative;
-    bottom:0;
+    bottom: 0;
 
 }
 
@@ -70,14 +84,17 @@ button#registr {
     right: 0;
     z-index: 9;
 }
+
 .form-popup h1 {
     color: white;
     font-size: 3vh;
 }
+
 .form-popup b {
     color: white;
     font-size: 2vh;
 }
+
 /* Add styles to the form container */
 .form-container {
     max-width: 100%;
@@ -135,11 +152,13 @@ button#registr {
     top: 55vw;
     width: 100%;
 }
+
 .notif2 {
     text-align: center;
     top: 1vw;
     width: 100%;
 }
+
 .addConcert {
     margin-top: 20vw;
 }
@@ -179,6 +198,7 @@ button#registr {
     width: 45vw;
     margin-left: 8vw;
 }
+
 .napis {
     position: relative;
     color: white;
@@ -280,6 +300,7 @@ button#registr {
     text-align: center;
     width: 100%;
 }
+
 p {
     white-space: pre-line;
 }
@@ -414,6 +435,7 @@ i.fas.fa-edit {
     p#moreAlbums {
         left: 6vh;
     }
+
     #prev {
         position: absolute;
         left: 20vh;
@@ -422,6 +444,7 @@ i.fas.fa-edit {
         font-size: 2.5vh;
         margin-left: 0;
     }
+
     #next {
         margin-top: 5vh;
         position: absolute;
@@ -430,6 +453,7 @@ i.fas.fa-edit {
         font-size: 2.5vh;
         margin-left: 0;
     }
+
     .form-container .btn {
         margin-right: 18vw;
         margin-left: 10vw;
@@ -442,15 +466,18 @@ i.fas.fa-edit {
         font-size: 1.5vh;
 
     }
+
     .form-popup h1 {
         color: white;
         font-size: 4vh;
     }
+
     .form-popup b {
         color: white;
         font-size: 2vh;
     }
-    .form-container{
+
+    .form-container {
         max-width: 100%;
     }
 
@@ -514,34 +541,42 @@ i.fas.fa-edit {
         margin-top: 5vh;
         margin-bottom: 9vh;
     }
+
     input[type="button"] {
         left: 13vh;
     }
 }
 
 @media only screen and (min-width: 768px) {
+
     p#moreAlbums {
         left: 8vh;
     }
+
     img.bioAlbums {
         width: 24vh;
         height: 23vh;
     }
+
     input[type="button"] {
         left: 15vh;
     }
+
     .form-container .btn {
         margin-right: 3vh;
         margin-left: 3vh;
     }
+
     .form-popup h1 {
         color: white;
         font-size: 5vh;
     }
+
     .form-popup b {
         color: white;
         font-size: 2.5vh;
     }
+
     .form-popup {
         display: none;
         position: fixed;
@@ -549,9 +584,11 @@ i.fas.fa-edit {
         right: 0;
         z-index: 9;
     }
-    .form-container{
+
+    .form-container {
         max-width: 250px;
     }
+
     .open-button {
         margin: 5px;
         left: -5px;
@@ -639,7 +676,6 @@ i.fas.fa-edit {
         top: -8vw;
         width: 60vw;
         margin-left: 35vw;
-
     }
 
     .songy {
@@ -649,7 +685,6 @@ i.fas.fa-edit {
     .napisok {
         margin-left: 10vh;
     }
-
 }
 
 .bg-dark {

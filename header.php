@@ -120,19 +120,21 @@ if(isset($_POST['logout'])) {
 
 <?php
 if (isset($_POST['Send'])) {
-    if ($_POST['username'] == '' || $_POST['psw'] == '') {
+    $username = str_replace(" ","",$_POST['username']);
+    $psw = str_replace(" ","",$_POST['psw']);
+    if ($_POST['username'] == '' || $_POST['psw'] == '' ||$username=='' || $psw == '') {
         ?>
-        <div class="notif3 alert alert-primary" role="alert">
-            Empty!
-        </div>
-    <?php }  if ($storage->control($_POST['username'],$_POST['psw'])==1) { ?>
-        <div class="notif3 alert alert-primary" role="alert">
-            Wrong username
-        </div>
+    <script>
+        window.alert("Empty!");
+    </script>
+    <?php } if ($storage->control($_POST['username'],$_POST['psw'])==1) { ?>
+    <script>
+        window.alert("Wrong username!");
+    </script>
     <?php }if ($storage->control($_POST['username'],$_POST['psw'])==2) { ?>
-        <div class="notif3 alert alert-primary" role="alert">
-            Wrong password
-        </div>
+    <script>
+        window.alert("Wrong password!");
+    </script>
     <?php }
 }
 ?>

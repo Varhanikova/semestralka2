@@ -13,7 +13,9 @@ if (isset($_GET['b']) == 'edit') {
     $concert = $storage->getOne($date1);
 }
 if (isset($_POST['Send1'])) {
-    if (($_POST['date']!= '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '' ) {
+    $city = str_replace(" ","",$_POST['city']);
+    $club = str_replace(" ","",$_POST['club']);
+    if (($_POST['date']!= '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '' && $city !='' && $club !='') {
         $a = htmlspecialchars($_POST['date']);
         $b = htmlspecialchars($_POST['city']);
         $c = htmlspecialchars($_POST['club']);
@@ -22,7 +24,9 @@ if (isset($_POST['Send1'])) {
     }
 }
 if (isset($_POST['Send2'])) {
-    if (($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && (($storage->isThere($_POST['newDate']) == '') || ($storage->isThere($_POST['newDate']) == $concert->getDate()))) {
+    $city = str_replace(" ","",$_POST['newCity']);
+    $club = str_replace(" ","",$_POST['newClub']);
+    if ($city != '' && $club !='' && ($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && (($storage->isThere($_POST['newDate']) == '') || ($storage->isThere($_POST['newDate']) == $concert->getDate()))) {
         $a = htmlspecialchars($_POST['newDate']);
         $b = htmlspecialchars($_POST['newCity']);
         $c = htmlspecialchars($_POST['newClub']);
@@ -35,37 +39,14 @@ $concerts = $storage->getAll();
 ?>
 <html>
 <script>
-    document.getElementById("concerts").className += " active";
+    function hide(str) {
+        document.getElementById(str).style.display="none";
+        document.documentElement.scrollTop = 0;
+    }
+    function show(str){
+        document.getElementById(str).style.display = "block";
+    }
 </script>
-<div class="napisok col-sm-11">
-    <div id="top">
-        <h1>Thousand Below tour dates 2021</h1>
-        <br>
-        <p>Thousand Below is currently touring across <?= $storage->kolko() ?> cities and has <?= sizeof($concerts) ?> upcoming concerts.
-            Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in <?= $concerts[1]->getCity() ?>.
-            See all your opportunities to see them live below!</p>
-        <br><br>
-        <?php   if (isset($_SESSION["name"])) {
-            if($_SESSION["name"]=='admin') {?>
-                <div class="buttony">
-                    <a href="?c=add#Add">
-                        <button> Add new concert</button>
-                    </a><br>
-                </div>
-            <?php }
-        } ?>
-        <h2>Upcoming concerts:</h2>
-    </div>
-</div>
-    <div class="kalendare" id="kalendarik">
-        <div id="kalendarik1" class="kalendarik1">
-        </div>
-
-    </div>
-<br>
-<input id="prev" onclick="previous()" type="button" value="Previous" />
-<input id="next" onclick="next()" type="button" value="Next" />
-
 <script>
     var i = 1;
     var size = parseInt('<?= sizeof($concerts) ?>');
@@ -93,12 +74,45 @@ $concerts = $storage->getAll();
             displayResults(i);
         }}
 </script>
+<script>
+    document.getElementById("concerts").className += " active";
+</script>
+<div class="napisok col-sm-11">
+    <div id="top">
+        <h1>Thousand Below tour dates 2021</h1>
+        <br>
+        <p>Thousand Below is currently touring across <?= $storage->kolko() ?> cities and has <?= sizeof($concerts) ?> upcoming concerts.
+            Their next tour date is at <?= $concerts[0]->getCity() ?>  <?= $concerts[0]->getClub() ?> , after that they'll be at <?= $concerts[1]->getClub() ?> in <?= $concerts[1]->getCity() ?>.
+            See all your opportunities to see them live below!</p>
+        <br><br>
+        <?php   if (isset($_SESSION["name"])) {
+            if($_SESSION["name"]=='admin') {?>
+                <div class="buttony">
+                    <a href="?c=add#Add">
+                        <button onclick="show('addConcert')">Add new concert</button>
+                    </a><br>
+                </div>
+            <?php }
+        } ?>
+        <h2>Upcoming concerts:</h2>
+    </div>
+</div>
+    <div class="kalendare" id="kalendarik">
+        <div id="kalendarik1" class="kalendarik1">
+        </div>
+
+    </div>
+<br>
+<input id="prev" onclick="previous()" type="button" value="Previous" />
+<input id="next" onclick="next()" type="button" value="Next" />
+
 
 <div id="Add" class="DBConcerts">
     <?php
     if (isset($_GET['c']) == 'add' && isset($_SESSION["name"]) ) { ?>
-    <div class="addConcert">
+    <div class="addConcert" id="addConcert">
         <label>Add new concert: </label>
+
         <form method="post">
             <label> Date: </label>
             <input type="date" name="date" id="date">
@@ -107,7 +121,10 @@ $concerts = $storage->getAll();
             <label>Club: </label>
             <input type="text" name="club" id="club">
             <input onclick="kontrola()" type="submit" name="Send1" value="Send">
+            <button type="button" onclick="hide('addConcert')"  >Cancel</button>
+
         </form>
+
     </div>
 </div>
 
@@ -116,41 +133,45 @@ $concerts = $storage->getAll();
 <?php
 if (isset($_POST['Send1'])) {
     if ($_POST['date'] < date("Y-m-d")) { ?>
-        <div class="notif alert alert-primary" role="alert">
-            Wrong date!
-        </div>
+    <script>
+        window.alert("Wrong date");
+    </script>
     <?php } if ($storage->isThere($_POST['date']) != '' ) {
 
         ?>
-        <div class="notif alert alert-primary" role="alert">
-            You can't use this date
-        </div>
+    <script>
+        window.alert("Already used date");
+    </script>
     <?php }
-    if($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '') { ?>
-        <div class="notif alert alert-primary" role="alert">
-            Empty!
-        </div>
+    $city = str_replace(" ","",$_POST['city']);
+    $club = str_replace(" ","",$_POST['club']);
+    if($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '' || $city == '' || $club == '') { ?>
+    <script>
+        window.alert("Empty!");
+    </script>
    <?php }
 }
 if (isset($_POST['Send2'])) {
-    if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '') {
+    $city = str_replace(" ","",$_POST['newCity']);
+    $club = str_replace(" ","",$_POST['newClub']);
+    if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '' || $city =='' || $club =='') {
         ?>
-        <div class="notif2 alert alert-primary" role="alert">
-            Something is missing there..
-        </div>
+    <script>
+        window.alert("Empty!");
+    </script>
     <?php } if ($_POST['newDate'] < date("Y-m-d")) { ?>
-        <div class="notif2 alert alert-primary" role="alert">
-            Wrong date!
-        </div>
+    <script>
+        window.alert("Wrong date!");
+    </script>
     <?php } if ($storage->isThere($_POST['newDate']) != '' && $storage->isThere($_POST['newDate']) != $concert->getDate()) { ?>
-        <div class="notif2 alert alert-primary" role="alert">
-            You can't use this date
-        </div>
+        <script>
+        window.alert("This date is already used");
+    </script>
     <?php }
 } ?>
 <div id="Edit" class="DBConcerts">
     <?php if (isset($_GET['b']) == 'edit') { ?>
-        <div class="editConcert">
+        <div class="editConcert" id="editConcert">
             <label> Update concert: </label>
             <form method="post">
                 <label> Updated Date:</label>
@@ -160,6 +181,7 @@ if (isset($_POST['Send2'])) {
                 <label> Updated Club:</label>
                 <input type="text" name="newClub" value="<?= $concert->getClub() ?>">
                 <input type="submit" name="Send2" value="Send">
+                <button type="button" onclick="hide('editConcert')" >Cancel</button>
             </form>
         </div>
     <?php } ?>

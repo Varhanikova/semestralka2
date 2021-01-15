@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
         document.getElementById("dropdown06").className += " active";
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script>
         function showSong(str,id) {
+
             var xhttp;
 if(document.getElementById(id).textContent == "") {
                 if (str == "") {
@@ -29,7 +30,5 @@ if(document.getElementById(id).textContent == "") {
     </script>
 </head>
 <body>
-
-
-
 </body>
+
