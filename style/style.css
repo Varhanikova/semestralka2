@@ -2,7 +2,26 @@
 body {
     background-color: black;
 }
-
+p#moreAlbums {
+    position: relative;
+    left: 9vw;
+}
+p#nazov {
+    font-size: 3vh;
+    font-family: auto;
+    margin-left: 2vw;
+}
+img.bioAlbums {
+    width: 20vh;
+    height: 19vh;
+    margin-left: 9vh;
+    margin-top: 1vh;
+    opacity: 0.7;
+}
+input[type="button"] {
+    position: relative;
+    left: 22vw;
+}
 button#registr {
     height: 31px;
     width: 35px;
@@ -183,7 +202,7 @@ button#registr {
 }
 
 .fotka5 {
-    height: 22.5vh;
+    height: 29.5vw;
     width: 100%;
     position: relative;
     top: 2vh;
@@ -389,6 +408,9 @@ i.fas.fa-edit {
 
 @media screen and (min-width: 479px) {
 
+    p#moreAlbums {
+        left: 6vh;
+    }
     #prev {
         position: absolute;
         left: 20vh;
@@ -489,14 +511,24 @@ i.fas.fa-edit {
         margin-top: 5vh;
         margin-bottom: 9vh;
     }
+    input[type="button"] {
+        left: 13vh;
+    }
 }
 
 @media only screen and (min-width: 768px) {
+    p#moreAlbums {
+        left: 8vh;
+    }
+    img.bioAlbums {
+        width: 24vh;
+        height: 23vh;
+    }
+    input[type="button"] {
+        left: 15vh;
+    }
     .form-container .btn {
-
         margin-right: 3vh;
-
-
         margin-left: 3vh;
     }
     .form-popup h1 {

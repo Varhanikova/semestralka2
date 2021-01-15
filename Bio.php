@@ -24,11 +24,14 @@ $st = new DB_storage();
         Josh Billimoria - Bass (2016–present)
         Max Santoro - Drums (2019–present)</p>
     <h1> Discography:</h1>
-    <h2> Studio albums</h2>
-    <div id='showAlbum'></div><br>
+    <h2> Studio albums: </h2>
+    <div id='showAlbum'>
+
+
+    </div><br>
     <input type="button" onclick="previous()" value="<<">
     <input type="button" onclick="next()" value=">>">
-    <p> Clik here to see more albums</p>
+    <p id="moreAlbums"> Clik here to see more albums</p>
     <script>
             var i = 0;
             displayAl(i);
