@@ -5,9 +5,9 @@ $storagee = new DB_storage();
 $concerts = $storagee->getAll();
 $pocet = sizeof($concerts);
 $vypis = $_GET['q'];
-$a=$vypis+4;
+$pridane=$vypis+4;
 $limit=0;
-if($pocet-$a>0) {
+if($pocet-$pridane>0) {
     $limit=$vypis+4;
 } else {
     $kolko = $pocet-$vypis+1;

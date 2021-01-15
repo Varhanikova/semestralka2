@@ -24,10 +24,10 @@ $songs = $storage2->vsetkyZAlbumu('Love You Let Too Close');
             if(isset($_SESSION["name"])) {
                 ?>
                 <li><a  onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
-                <div id="<?= $string?>" class="bla"></div>
+                <div id="<?= $string?>" class="lyrics"></div>
             <?php } else { ?>
                 <li><a><?= $song->getName() ?></a></li>
-                <div id="<?= $string?>" class="bla"></div>
+                <div id="<?= $string?>" class="lyrics"></div>
 
             <?php }
         }?>

@@ -75,16 +75,6 @@ if(isset($_POST['logout'])) {
                         <a class="dropdown-item" href="LetGoOfYourLove.php">Let Go Of Your Love</a>
                     </div>
                 </li>
-                <script>
-                    var id = "index";
-                    document.URL.includes("index.php") {id="index";}
-                    else if(document.URL.includes("Bio.php")){id="bio";}
-                    else if(document.URL.includes("Concerts.php")) {id="concerts";}
-                    var current = document.getElementsByClassName("active");
-                    current.className = current.className.replace(" active", "");
-                    document.getElementById(id).className += " active";
-
-                </script>
             </ul>
             <?php
             if (isset($_SESSION["name"])) {
@@ -133,15 +123,15 @@ if (isset($_POST['Send'])) {
     if ($_POST['username'] == '' || $_POST['psw'] == '') {
         ?>
         <div class="notif3 alert alert-primary" role="alert">
-            Niečo si nedoplnil !
+            Empty!
         </div>
     <?php }  if ($storage->control($_POST['username'],$_POST['psw'])==1) { ?>
         <div class="notif3 alert alert-primary" role="alert">
-            zlé meno !
+            Wrong username
         </div>
     <?php }if ($storage->control($_POST['username'],$_POST['psw'])==2) { ?>
         <div class="notif3 alert alert-primary" role="alert">
-            zlé heslo !
+            Wrong password
         </div>
     <?php }
 }

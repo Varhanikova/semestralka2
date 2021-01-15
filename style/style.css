@@ -9,7 +9,7 @@ button#registr {
     margin-right: 20px;
 }
 {box-sizing: border-box;}
-#konc{color: white;}
+
 #login{color: black;
     height: 30px;
     width: 40px;
@@ -120,7 +120,6 @@ button#registr {
 }
 .addConcert {
     margin-top: 20vw;
-
 }
 
 .DBConcerts {
@@ -253,24 +252,12 @@ button#registr {
     color: bisque;
 }
 
-.bla {
+.lyrics {
     font-size: 2vh;
     color: white;
     text-align: center;
     width: 100%;
 }
-
-.bla h1 {
-    font-size: 4vh;
-    text-align: center;
-
-}
-
-.bla h2 {
-    font-size: 3vh;
-    text-align: center;
-}
-
 p {
     white-space: pre-line;
 }
@@ -332,8 +319,6 @@ p {
     height: 10vw;
 
     margin-top: 5vw;
-
-
 }
 
 .kalendare svg {

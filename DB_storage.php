@@ -20,24 +20,25 @@ class DB_storage
 
     }
 public function controlPass($name,$pass): bool {
-        $pom = '';
-    $stmt = $this->pdo->query("SELECT heslo FROM prihlasenie WHERE name='$name'");
-    while ($row = $stmt->fetch()) {
-        $pom = $row['heslo'];
-    }
-    $h = md5($pass);
-    if($pom == $h) {
-        return true;
-    } else {return false;}
+        $heslo = '';
+        $stmt = $this->pdo->query("SELECT heslo FROM prihlasenie WHERE name='$name'");
+        while ($row = $stmt->fetch()) {
+            $heslo = $row['heslo'];
+        }
+        $hash = md5($pass);
+        if($heslo == $hash) {
+            return true;
+        } else {
+            return false;
+        }
 }
     public function control($name,$pass): int {
-$pom = '';
-       // $login = new Login('', '');
+        $meno = '';
         $stmt = $this->pdo->query("SELECT * FROM prihlasenie WHERE name='$name'");
         while ($row = $stmt->fetch()) {
-            $pom = $row['name'];
+            $meno = $row['name'];
         }
-        if($pom==$name) {
+        if($meno==$name) {
             if($this->controlPass($name,$pass)) {
                 return 0;
             } else {
@@ -97,6 +98,7 @@ public function saveLogin($name, $heslo): bool{
         return $album;
     }
     public function kolko(): string{
+        $pocet='';
         $stmt = $this->pdo->query("SELECT COUNT(DISTINCT (city)) as pocet FROM concerts");
         while ($row = $stmt->fetch()) {
           $pocet = $row['pocet'];
@@ -154,12 +156,11 @@ public function saveLogin($name, $heslo): bool{
         return $concert;
     }
     public function isThere(string $datumik) {
-        $pom ='';
+        $date ='';
         $stmt = $this->pdo->query("SELECT * FROM concerts WHERE datum='$datumik'");
         while ($row = $stmt->fetch()) {
-            $pom = $row['datum'];
+            $date = $row['datum'];
         }
-
-        return $pom;
+        return $date;
     }
 }

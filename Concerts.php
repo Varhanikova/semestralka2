@@ -35,7 +35,6 @@ $concerts = $storage->getAll();
 ?>
 <html>
 <script>
-
     document.getElementById("concerts").className += " active";
 </script>
 <div class="napisok col-sm-11">
@@ -53,7 +52,8 @@ $concerts = $storage->getAll();
                         <button> Add new concert</button>
                     </a><br>
                 </div>
-            <?php }} ?>
+            <?php }
+        } ?>
         <h2>Upcoming concerts:</h2>
     </div>
 </div>

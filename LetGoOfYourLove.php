@@ -20,11 +20,11 @@ $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
             <?php  $string = str_replace(' ', '', $song->getName());
             if(isset($_SESSION["name"])) {
             ?>
-            <li><a id="togg"  onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
-            <div id="<?= $string?>" class="bla"></div>
+            <li><a onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
+            <div id="<?= $string?>" class="lyrics"></div>
             <?php } else { ?>
-                <li><a id="togg" ><?= $song->getName() ?></a></li>
-                <div id="<?= $string?>" class="bla"></div>
+                <li><a ><?= $song->getName() ?></a></li>
+                <div id="<?= $string?>" class="lyrics"></div>
 
            <?php }
         }?>

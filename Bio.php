@@ -10,7 +10,7 @@ $st = new DB_storage();
 </head>
 <body>
 <img class="fotka5" src="pics/boys.jpg" alt="chalosi">
-<div class="bioo ">
+<div class="bioo">
     <p> Thousand Below is an American post-hardcore band from Southern California, formed in 2016.
         They are currently signed to Rise Records.</p>
     <p>Formed by vocalist James DeBerg after his departure from his previous band Outlands, the band signed for Rise
