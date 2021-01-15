@@ -10,13 +10,16 @@ p#nazov {
     font-size: 3vh;
     font-family: auto;
     margin-left: 2vw;
+    margin-top: 2vw;
+    color: cornsilk;
 }
 img.bioAlbums {
     width: 20vh;
     height: 19vh;
     margin-left: 9vh;
-    margin-top: 1vh;
+    margin-top: 2vh;
     opacity: 0.7;
+    margin-bottom: 2vh;
 }
 input[type="button"] {
     position: relative;

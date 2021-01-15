@@ -13,9 +13,10 @@ if($_GET['q'] == '0'){
     $rok = '2020';$pic = 'letGoOfYourLove';
 }
 $src = "pics/" . $pic. ".jpg";
-echo "<img class='bioAlbums' src=$src alt='nazov kapely'>" . "<br>"
-    ."<p id='nazov'>" . $storage->dajAlbum($rok) .
-    " (". $rok. ")"."</p>"
-
+echo
+"<p id='nazov'>" . $storage->dajAlbum($rok) .
+    " (". $rok. ")"."</p>". "<img class='bioAlbums' src=$src alt='nazov kapely'>" . "<br>"
 ;
+
+
 ?>
