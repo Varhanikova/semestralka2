@@ -7,12 +7,14 @@ class Song
     private string $name;
     private string $text;
     private string $album;
+    private string $id;
 
-    public function __construct($name,$text,$album)
+    public function __construct($name,$text,$album, $id)
     {
         $this->name=$name;
         $this->text=$text;
         $this->album=$album;
+        $this->id=$id;
     }
     public function getName(): string
     {
@@ -57,6 +59,14 @@ class Song
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): string
+    {
+        return $this->id;
     }
 
 }

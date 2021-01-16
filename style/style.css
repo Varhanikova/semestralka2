@@ -5,6 +5,7 @@ body {
 div#Edit {
     margin-top: 10vw;
 }
+.editSong{color: white;}
 p#moreAlbums {
     position: relative;
     left: 9vw;

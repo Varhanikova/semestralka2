@@ -58,15 +58,24 @@ public function saveLogin($name, $heslo): bool{
             return false;
         }
 
+}public function editSong($name, $text) {
+    $stmt = $this->pdo->prepare("UPDATE songs SET text=? WHERE nazov=?");
+    $stmt->execute([$text, $name]);
 }
     public function createSong(string $name, string $text, string $album){
-        $song = new Song($name,$text,$album);
+        $stmt = $this->pdo->query("SELECT COUNT(*) as pocet from songs ");
+        $pocet = '';
+        while ($row = $stmt->fetch()) {
+            $pocet = $row['pocet'] +1;
+        }
+        $poc = strval($pocet);
+        $song = new Song($name,$text,$album,$poc);
         $this->saveSong($song);
     }
     public function saveSong(Song $song): void
     {
-        $stmt = $this->pdo->prepare("INSERT INTO songs(nazov,text,album) VALUES(?,?,?)");
-        $stmt->execute([$song->getName(), $song->getText(), $song->getAlbum()]);
+        $stmt = $this->pdo->prepare("INSERT INTO songs(nazov,text,album,id) VALUES(?,?,?,?)");
+        $stmt->execute([$song->getName(), $song->getText(), $song->getAlbum(),$song->getId()]);
     }
     public function vsetkyZAlbumu(string $album): array {
         $stmt = $this->pdo->prepare("SELECT * FROM songs WHERE album=?");
@@ -75,7 +84,7 @@ public function saveLogin($name, $heslo): bool{
 
         while ($row = $stmt->fetch()) {
 
-            $song = new Song($row['nazov'], $row['text'], $row['album']);
+            $song = new Song($row['nazov'], $row['text'], $row['album'],$row['id']);
             $songs[] = $song;
         }
         return $songs;

@@ -18,8 +18,11 @@ $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
             ?>
             <?php  $string = str_replace(' ', '', $song->getName());
             if(isset($_SESSION["name"])) {
-                ?>
-                <li><a onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
+                ?> <li>
+                    <?php if($_SESSION["name"]=='admin') {?>
+                        <a id="butAl" href="?e=<?= $song->getName()?>" onclick="show('editSong')"><i class='fas fa-edit'></i></a>
+                    <?php } ?>
+                <a onclick="showSong('<?= $song->getName()?>','<?= $string?>')" ><?= $song->getName() ?></a></li>
                 <div id="<?= $string?>" class="lyrics"></div>
             <?php } else { ?>
                 <li><a ><?= $song->getName() ?></a></li>
