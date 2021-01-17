@@ -13,7 +13,7 @@ $songs = $storage3->vsetkyZAlbumu('Gone In Your Wake');
 <img class="album1" src="pics/gonein.jpg" alt="album">
 <div class="songy ">
     <h2>Songs:</h2>
-    <ul id ="sem" onload="load()">
+    <ul id="ulko">
         <?php foreach ($songs as $song) {
             ?>
             <?php  $string = str_replace(' ', '', $song->getName());

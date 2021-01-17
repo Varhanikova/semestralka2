@@ -58,12 +58,12 @@ if(isset($_SESSION["name"]) && isset($_GET['e'])!='') {
     if($_SESSION["name"]=='admin') {
         ?>
         <div class="editSong" id="editSong">
-            <label>Add new song: </label>
+            <label>Edit song: </label>
             <form method="post">
                 <label> Album: </label>
-                <input  type="text" name="album" id="album" value="album">
+                <input  type="text" name="album" id="album" value="album" readonly>
                 <label> Name: </label>
-                <input  type="text" name="name" id="name" value="<?= ($_GET['e'])?>"> <br>
+                <input  type="text" name="name" id="name" value="<?= ($_GET['e'])?>" readonly> <br>
                 <label> Text: </label>
                 <textarea rows="10" cols="50" name="text" id="text" ><?= $storageAl->textSongu($_GET['e'])?></textarea>
                 <input type="submit" name="SendS" value="Send">

@@ -28,7 +28,6 @@ $songs = $storage1->vsetkyZAlbumu('Let Go Of Your Love');
             <?php } else { ?>
                 <li><a ><?= $song->getName() ?></a></li>
                 <div id="<?= $string?>" class="lyrics"></div>
-
            <?php }
         }?>
     </ul>
