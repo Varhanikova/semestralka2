@@ -12,9 +12,7 @@ $songs = $storage2->vsetkyZAlbumu('Love You Let Too Close');
 
 </head>
 <body>
-
 <img class="album1" src="pics/loveyoulettooclose.jpg" alt="album">
-
 <div class="songy ">
     <h2>Songs:</h2>
     <ul>

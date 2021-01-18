@@ -12,21 +12,53 @@ if (isset($_GET['b']) == 'edit') {
     $date1 = $_GET['date2'];
     $concert = $storage->getOne($date1);
 }
-if (isset($_POST['Send1'])) {
-    $city = str_replace(" ","",$_POST['city']);
-    $club = str_replace(" ","",$_POST['club']);
-    if (($_POST['date']!= '' && $_POST['city'] != '' && $_POST['club'] != '') && $_POST['date'] >= date("Y-m-d") && $storage->isThere($_POST['date']) == '' && $city !='' && $club !='') {
-        $a = htmlspecialchars($_POST['date']);
-        $b = htmlspecialchars($_POST['city']);
-        $c = htmlspecialchars($_POST['club']);
-        $storage->createPost($a, $b, $c);
-        header("Location: Concerts.php?#top");
-    }
+    if (isset($_POST['Send1'])) {
+        $chyba1 =0;
+        if ($_POST['date'] < date("Y-m-d")) { $chyba1=1;?>
+            <script>
+                window.alert("Wrong date");
+            </script>
+        <?php } if ($storage->isThere($_POST['date']) != '' ) { $chyba1=1;
+
+            ?>
+            <script>
+                window.alert("Already used date");
+            </script>
+        <?php }
+        $city = str_replace(" ","",$_POST['city']);
+        $club = str_replace(" ","",$_POST['club']);
+        if($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '' || $city == '' || $club == '') {  $chyba1=1; ?>
+            <script>
+                window.alert("Empty!");
+            </script>
+        <?php }
+        if($chyba1==0){
+            $a = htmlspecialchars($_POST['date']);
+            $b = htmlspecialchars($_POST['city']);
+            $c = htmlspecialchars($_POST['club']);
+            $storage->createPost($a, $b, $c);
+            header("Location: Concerts.php?#top");
+        }
 }
 if (isset($_POST['Send2'])) {
+    $chyba = 0;
     $city = str_replace(" ","",$_POST['newCity']);
     $club = str_replace(" ","",$_POST['newClub']);
-    if ($city != '' && $club !='' && ($_POST['newDate'] != '' && $_POST['newCity'] != '' && $_POST['newClub'] != '') && $_POST['newDate'] >= date("Y-m-d") && (($storage->isThere($_POST['newDate']) == '') || ($storage->isThere($_POST['newDate']) == $concert->getDate()))) {
+    if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '' || $city =='' || $club =='') $chyba=1;{
+        ?>
+        <script>
+            window.alert("Empty!");
+        </script>
+    <?php } if ($_POST['newDate'] < date("Y-m-d")) { $chyba=1; ?>
+        <script>
+            window.alert("Wrong date!");
+        </script>
+    <?php } if ($storage->isThere($_POST['newDate']) != '' && $storage->isThere($_POST['newDate']) != $concert->getDate()) { $chyba=1; ?>
+        <script>
+            window.alert("This date is already used");
+        </script>
+    <?php }
+    if($chyba==0) {
         $a = htmlspecialchars($_POST['newDate']);
         $b = htmlspecialchars($_POST['newCity']);
         $c = htmlspecialchars($_POST['newClub']);
@@ -35,7 +67,6 @@ if (isset($_POST['Send2'])) {
     }
 }
 $concerts = $storage->getAll();
-
 ?>
 <html>
 <script>
@@ -106,7 +137,6 @@ $concerts = $storage->getAll();
 <input id="prev" onclick="previous()" type="button" value="Previous" />
 <input id="next" onclick="next()" type="button" value="Next" />
 
-
 <div id="Add" class="DBConcerts">
     <?php
     if (isset($_GET['c']) == 'add' && isset($_SESSION["name"]) ) { ?>
@@ -130,45 +160,6 @@ $concerts = $storage->getAll();
 
 <?php } ?>
 
-<?php
-if (isset($_POST['Send1'])) {
-    if ($_POST['date'] < date("Y-m-d")) { ?>
-    <script>
-        window.alert("Wrong date");
-    </script>
-    <?php } if ($storage->isThere($_POST['date']) != '' ) {
-
-        ?>
-    <script>
-        window.alert("Already used date");
-    </script>
-    <?php }
-    $city = str_replace(" ","",$_POST['city']);
-    $club = str_replace(" ","",$_POST['club']);
-    if($_POST['date'] == '' || $_POST['city'] == '' || $_POST['club'] == '' || $city == '' || $club == '') { ?>
-    <script>
-        window.alert("Empty!");
-    </script>
-   <?php }
-}
-if (isset($_POST['Send2'])) {
-    $city = str_replace(" ","",$_POST['newCity']);
-    $club = str_replace(" ","",$_POST['newClub']);
-    if ($_POST['newDate'] == '' || $_POST['newCity'] == '' || $_POST['newClub'] == '' || $city =='' || $club =='') {
-        ?>
-    <script>
-        window.alert("Empty!");
-    </script>
-    <?php } if ($_POST['newDate'] < date("Y-m-d")) { ?>
-    <script>
-        window.alert("Wrong date!");
-    </script>
-    <?php } if ($storage->isThere($_POST['newDate']) != '' && $storage->isThere($_POST['newDate']) != $concert->getDate()) { ?>
-        <script>
-        window.alert("This date is already used");
-    </script>
-    <?php }
-} ?>
 <div id="Edit" class="DBConcerts">
     <?php if (isset($_GET['b']) == 'edit') { ?>
         <div class="editConcert" id="editConcert">

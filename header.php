@@ -6,14 +6,37 @@ $storage = new DB_storage();
 session_start();
 
 if (isset($_POST['Send'])) {
-    if ($_POST['username']!= '' && $_POST['psw']!='' &&$storage->control($_POST['username'],$_POST['psw'])==0) {
-      $_SESSION["name"] = $_POST['username'];
+
+    $chyba=0;
+    $username = str_replace(" ","",$_POST['username']);
+    $psw = str_replace(" ","",$_POST['psw']);
+    if ($_POST['username'] == '' || $_POST['psw'] == '' ||$username=='' || $psw == '') {
+       $chyba=1; ?>
+        <script>
+            window.alert("Empty!");
+        </script>
+    <?php } if ($storage->control($_POST['username'],$_POST['psw'])==1) {  $chyba=1;?>
+        <script>
+            window.alert("Wrong username!");
+        </script>
+    <?php }if ($storage->control($_POST['username'],$_POST['psw'])==2) {  $chyba=1;?>
+        <script>
+            window.alert("Wrong password!");
+        </script>
+    <?php }
+    if($chyba ==0){
+        $_SESSION["name"] = $_POST['username'];
     }
 }
 if(isset($_POST['reg'])) {
-    if($storage->saveLogin($_POST['username'],$_POST['psw1'])==true) {
-
-    }
+   if( $storage->saveLogin($_POST['username'],$_POST['psw1'])==false){
+       ?>
+       <script>
+           window.alert("You can't use this username!");
+       </script>
+       <?php
+   }
+    header("?#");
 }
 if(isset($_POST['logout'])) {
     unset($_SESSION["name"]);
@@ -113,28 +136,7 @@ if(isset($_POST['logout'])) {
                 </div>
             </div>
            <?php } ?>
-
         </div>
     </nav>
 </div>
 
-<?php
-if (isset($_POST['Send'])) {
-    $username = str_replace(" ","",$_POST['username']);
-    $psw = str_replace(" ","",$_POST['psw']);
-    if ($_POST['username'] == '' || $_POST['psw'] == '' ||$username=='' || $psw == '') {
-        ?>
-    <script>
-        window.alert("Empty!");
-    </script>
-    <?php } if ($storage->control($_POST['username'],$_POST['psw'])==1) { ?>
-    <script>
-        window.alert("Wrong username!");
-    </script>
-    <?php }if ($storage->control($_POST['username'],$_POST['psw'])==2) { ?>
-    <script>
-        window.alert("Wrong password!");
-    </script>
-    <?php }
-}
-?>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <script>
-        document.getElementById("dropdown06").className += " active";
+        document.getElementById("dropdown06").className += " active" ;
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>function hide(str)
@@ -12,9 +12,11 @@
             document.getElementById(str).style.display="none";
             document.documentElement.scrollTop = 0;
 
-        }function show(str){
+        }
+        function show(str){
             document.getElementById(str).style.display = "block";
-        }</script>
+        }
+    </script>
     <script>
         function showSong(str,id) {
 
@@ -34,7 +36,8 @@ if(document.getElementById(id).textContent == "") {
                 xhttp.send();
           } else {
     document.getElementById(id).innerHTML = "";
-    }}
+        }
+    }
     </script>
 
 </head>
@@ -50,6 +53,7 @@ if (isset($_POST['SendS'])) {
         $b = htmlspecialchars($_POST['text']);
         $c = $_POST['album'];
         $storageAl->editSong($_POST['name'],$_POST['text']);
+
     }
 }
 ?>
@@ -66,8 +70,8 @@ if(isset($_SESSION["name"]) && isset($_GET['e'])!='') {
                 <input  type="text" name="name" id="name" value="<?= ($_GET['e'])?>" readonly> <br>
                 <label> Text: </label>
                 <textarea rows="10" cols="50" name="text" id="text" ><?= $storageAl->textSongu($_GET['e'])?></textarea>
-                <input type="submit" name="SendS" value="Send">
-                <button type="button" onclick="hide('editSong')" >Cancel</button>
+                <input type="submit" name="SendS" value="Send" >
+                <button type="button" onclick="hide('editSong')">Cancel</button>
             </form>
         </div>
     <?php }

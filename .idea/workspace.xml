@@ -19,12 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="edit pre songs">
-      <change afterPath="$PROJECT_DIR$/songs.php" afterDir="false" />
+    <list default="true" id="7c08ae0d-8c03-40db-b995-5ac398c926a9" name="Default Changelist" comment="readonly pre edit songov">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Albums/albumy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Albums/albumy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoneInYourWake.php" beforeDir="false" afterPath="$PROJECT_DIR$/GoneInYourWake.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LetGoOfYourLove.php" beforeDir="false" afterPath="$PROJECT_DIR$/LetGoOfYourLove.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Concerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Concerts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB_storage.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB_storage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoveYouLetTooClose.php" beforeDir="false" afterPath="$PROJECT_DIR$/LoveYouLetTooClose.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +118,9 @@
       <workItem from="1610663946730" duration="5328000" />
       <workItem from="1610717634963" duration="14375000" />
       <workItem from="1610816564221" duration="9263000" />
-      <workItem from="1610882930503" duration="919000" />
+      <workItem from="1610882930503" duration="1172000" />
+      <workItem from="1610884326725" duration="1267000" />
+      <workItem from="1610987445644" duration="3566000" />
     </task>
     <task id="LOCAL-00001" summary="funguje mi php zatiaľ">
       <created>1605125382434</created>
@@ -349,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610838710326</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="readonly pre edit songov">
+      <created>1610884068219</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610884068219</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +379,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="detail" />
     <MESSAGE value="add button to go on the top page" />
     <MESSAGE value="rozumný komit" />
     <MESSAGE value="kontrola" />
@@ -393,7 +403,8 @@
     <MESSAGE value="zmena farby" />
     <MESSAGE value="cancel aj pre edit, a čosi" />
     <MESSAGE value="edit pre songs" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit pre songs" />
+    <MESSAGE value="readonly pre edit songov" />
+    <option name="LAST_COMMIT_MESSAGE" value="readonly pre edit songov" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605124124540">
@@ -424,10 +435,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605736609800" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610838718356">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610884086410">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610838718356" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610884086410" />
     <state x="668" y="289" width="422" height="297" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605124150573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -436,10 +447,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="647" y="299" width="312" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824@0.0.1536.824" timestamp="1605124136777" />
-    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1605123881760">
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1610990402839">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.824@0.0.1536.824" timestamp="1605123881760" />
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.824@0.0.1536.824" timestamp="1610990402839" />
     <state x="566" y="232" width="403" height="343" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1610366896839">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

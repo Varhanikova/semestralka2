@@ -71,6 +71,7 @@ public function saveLogin($name, $heslo): bool{
         $poc = strval($pocet);
         $song = new Song($name,$text,$album,$poc);
         $this->saveSong($song);
+
     }
     public function saveSong(Song $song): void
     {
